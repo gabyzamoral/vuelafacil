@@ -110,12 +110,12 @@ CREATE TABLE `usuario` (
   `usuaid` int(6) NOT NULL COMMENT 'Identificado de la tabla usuario',
   `tipdocid` int(4) NOT NULL COMMENT 'Identificador del tipo de documento',
   `usuanombre` varchar(50) NOT NULL COMMENT 'Nombre del usuario',
-  `usuaapellido` int(11) NOT NULL COMMENT 'Apellidos del usuario',
-  `usuadocumento` int(11) NOT NULL COMMENT 'Documento del usuario',
-  `usuadireccion` int(11) DEFAULT NULL COMMENT 'Dirección del usuario',
-  `usuatelefono` int(11) DEFAULT NULL COMMENT 'Teléfono del usuario',
-  `usuausuario` int(11) NOT NULL COMMENT 'Usuario de ingreso al sistema',
-  `usuacontrasena` int(11) NOT NULL COMMENT 'Contraseña del usuario',
+  `usuaapellido` varchar(50) NOT NULL COMMENT 'Apellidos del usuario',
+  `usuadocumento` varchar(50) NOT NULL COMMENT 'Documento del usuario',
+  `usuadireccion` varchar(60) DEFAULT NULL COMMENT 'Dirección del usuario',
+  `usuatelefono` varchar(20) DEFAULT NULL COMMENT 'Teléfono del usuario',
+  `usuausuario` varchar(20) NOT NULL COMMENT 'Usuario de ingreso al sistema',
+  `usuacontrasena` varchar(20) NOT NULL COMMENT 'Contraseña del usuario',
   `usuatipousuario` int(1) NOT NULL COMMENT 'Tipo de usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

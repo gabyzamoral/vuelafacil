@@ -4,17 +4,18 @@ package com.vuelafacil.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- *
- * @author Edward Henao1
- */
-
 @Controller
 public class ControladorPrincipal 
 {
-    @GetMapping("/")
+    @GetMapping("/")//Aqui escribo la ruta para cargar la ruta base
     public  String cargarPaginaPrincipal()
     {
         return "index";
-    }    
+    }
+
+    @GetMapping("/login")
+    public String iniciarSesion()
+    {
+        return "login";
+    }
 }

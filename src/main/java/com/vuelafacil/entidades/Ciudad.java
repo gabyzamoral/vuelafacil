@@ -50,12 +50,6 @@ public class Ciudad {
     
     public String getCodigoAeropuerto(){
        return this.codigoAeropuerto;
-    }
-    
-    
-
-        
-    
-    
+    }       
     
 }

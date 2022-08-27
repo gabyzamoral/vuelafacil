@@ -16,65 +16,61 @@ public class Vuelos {
     private String  [] azafatas;
     private String  [] pasajeros;
     
-public Vuelos(String namCiudadOrigen, String namCiudadDestino, String nombrePiloto, String nombreCopiloto, String [] azafatas, String [] pasajeros){
-    this.namCiudadOrigen = namCiudadOrigen;
-    this.namCiudadDestino = namCiudadDestino;
-    this.nombrePiloto = nombrePiloto;
-    this.nombreCopiloto = nombreCopiloto;
-    this.azafatas = azafatas;
-    this.pasajeros = pasajeros;
-}
-    
-public void setNamCiudadOrigen(String nombreCiudad){
-    this.namCiudadOrigen = namCiudadOrigen;
+    public Vuelos(String namCiudadOrigen, String namCiudadDestino, String nombrePiloto, String nombreCopiloto, String [] azafatas, String [] pasajeros){
+        this.namCiudadOrigen = namCiudadOrigen;
+        this.namCiudadDestino = namCiudadDestino;
+        this.nombrePiloto = nombrePiloto;
+        this.nombreCopiloto = nombreCopiloto;
+        this.azafatas = azafatas;
+        this.pasajeros = pasajeros;
     }
 
-public void setNamCiudadDestino(String namCiudadDestino){
-    this.namCiudadDestino = namCiudadDestino;
+    public void setNamCiudadOrigen(String nombreCiudad){
+        this.namCiudadOrigen = namCiudadOrigen;
     }
 
-public void setNombrePiloto(String nombrePiloto){
-    this.nombrePiloto = nombrePiloto;
+    public void setNamCiudadDestino(String namCiudadDestino){
+        this.namCiudadDestino = namCiudadDestino;
     }
 
-public void setNombreCopiloto(String nombreCopiloto){
-    this.nombreCopiloto = nombreCopiloto;
+    public void setNombrePiloto(String nombrePiloto){
+        this.nombrePiloto = nombrePiloto;
     }
 
-public void setAzafatas(String [] azafatas){
-    this.azafatas = azafatas;
+    public void setNombreCopiloto(String nombreCopiloto){
+        this.nombreCopiloto = nombreCopiloto;
     }
 
-public void setPasajeros(String [] pasajeros){
-    this.pasajeros = pasajeros;
+    public void setAzafatas(String [] azafatas){
+        this.azafatas = azafatas;
     }
 
-public String getNamCiudadOrigen(){
-    return this.namCiudadOrigen;
+    public void setPasajeros(String [] pasajeros){
+        this.pasajeros = pasajeros;
     }
 
-public String getNamCiudadDestino(){
-    return this.namCiudadDestino;
+    public String getNamCiudadOrigen(){
+        return this.namCiudadOrigen;
     }
 
-public String getNombrePiloto(){
-    return this.nombrePiloto;
+    public String getNamCiudadDestino(){
+        return this.namCiudadDestino;
     }
 
-public String getNombreCopiloto(){
-    return this.nombreCopiloto;
+    public String getNombrePiloto(){
+        return this.nombrePiloto;
     }
 
-public String [] getAzafatas(){
-    return this.azafatas;
+    public String getNombreCopiloto(){
+        return this.nombreCopiloto;
     }
 
-public String [] getPasajeros(){
-    return this.pasajeros;
+    public String [] getAzafatas(){
+        return this.azafatas;
     }
 
+    public String [] getPasajeros(){
+        return this.pasajeros;
+    }
 
-
-
-    
 }

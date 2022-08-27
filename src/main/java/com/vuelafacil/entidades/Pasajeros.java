@@ -9,5 +9,51 @@ package com.vuelafacil.entidades;
  * @author mariojurado
  */
 public class Pasajeros {
+    private String nombres;
+    private String apellidos;
+    private String correoElectronico;
+    private int numCelular;
+
+
+    public Pasajeros (String nombres, String apellidos, String correoElectronico, int numCelular){
+
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correoElectronico = correoElectronico;
+        this.numCelular = numCelular;
+
+    }
+
+    public void setNombres(String nombres){
+         this.nombres = nombres;
+    }
+
+    public void setApellidos(String apellidos){
+         this.apellidos = apellidos;
+    }
+
+    public void setCorreoElectronico(String correoElectronico){
+        this.correoElectronico = correoElectronico;
+    }
     
+    public void setNumeroCelular(int numCelular){
+        this.numCelular = numCelular;
+    }
+
+    public String getNombres(){
+        return this.nombres;
+    }
+    
+    public String getApellidos(){
+        return this.apellidos;
+    }
+    
+    public String getCorreoElectronico(){
+        return this.correoElectronico;
+    }
+    
+    public int  getNumCelular(){
+        return this.numCelular;
+    }
+
 }

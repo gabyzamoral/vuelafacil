@@ -44,12 +44,21 @@ public class Ciudad {
         return this.nombreCiudad;
     }
     
-    public String getNombrAeropuerto(){
+    public String getNombreAeropuerto(){
         return this.nombreAeropuerto;
     }
     
     public String getCodigoAeropuerto(){
        return this.codigoAeropuerto;
-    }       
+    }
+    
+    // Formato para imprimir la información
+    public String toString(){
+           return "Nombre Ciudad: " + this.nombreCiudad + "\n" +
+                  "Nombre Aeropuerto: " + this.nombreAeropuerto + "\n" +
+                  "código Aeropuerto: " + this.codigoAeropuerto + "\n" +
+                  "Estado Aeropuerto: " + this.estadoAeropuerto;
+    	
+    }
     
 }

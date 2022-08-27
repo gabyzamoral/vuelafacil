@@ -14,8 +14,9 @@ public class Tiquetes {
     private boolean adicionalEquipaje;
     private String puertaAbordaje;
     private String puertaSalida;
+    private int valorTiquete;
     
-    public Tiquetes (boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida){
+    public Tiquetes (boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
 
         this.tipoClase = tipoClase;
         this.adicionalEquipaje = adicionalEquipaje;
@@ -38,6 +39,10 @@ public class Tiquetes {
     public void setPuertaSalida(String puertaSalida){
         this.puertaSalida = puertaSalida;
         }
+    
+    public void setValorTiquete(int valorTiquete){
+        this.valorTiquete = valorTiquete;
+        }
 
     public boolean getTipoClase(){
         return this.tipoClase;
@@ -54,5 +59,10 @@ public class Tiquetes {
     public String getPuertaSalida(){
         return this.puertaSalida;
         }
+    
+    public int getValorTiquete(){
+        return this.valorTiquete;
+        }
+
 
 }

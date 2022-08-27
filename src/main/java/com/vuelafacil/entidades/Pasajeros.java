@@ -56,4 +56,13 @@ public class Pasajeros {
         return this.numCelular;
     }
 
+public String toString()
+    {
+    	return  "Nombres: " + this.nombres + "\n" +
+    		"Apellidos: " + this.apellidos + "\n" +
+                "Correo Electronico: " + this.correoElectronico + "\n" +
+                "Numero de celular: " + this.numCelular;
+    	
+    }    
+
 }

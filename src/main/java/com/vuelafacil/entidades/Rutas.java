@@ -15,54 +15,54 @@ public class Rutas {
     private int horaSalida;
     private int horaLlegada;
 
-public Rutas (String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
-    this.nombreRuta = nombreRuta;
-    this.codigoRuta = codigoRuta;
-    this.frecuenciaRuta = frecuenciaRuta;
-    this.horaSalida = horaSalida;
-    this.horaLlegada = horaLlegada;
-    
-}
+    public Rutas (String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+        this.nombreRuta = nombreRuta;
+        this.codigoRuta = codigoRuta;
+        this.frecuenciaRuta = frecuenciaRuta;
+        this.horaSalida = horaSalida;
+        this.horaLlegada = horaLlegada;
 
-public void setNombreRuta(String nombreRuta){
-    this.nombreRuta = nombreRuta;
-}
+    }
 
-public void setCodigoRuta(String codigoRuta){
-    this.codigoRuta = codigoRuta;
-}
+    public void setNombreRuta(String nombreRuta){
+        this.nombreRuta = nombreRuta;
+    }
 
-public void setFrecuenciaRuta(int frecuenciaRuta){
-    this.frecuenciaRuta = frecuenciaRuta;
-}
+    public void setCodigoRuta(String codigoRuta){
+        this.codigoRuta = codigoRuta;
+    }
 
-public void setHoraSalida(int horaSalida){
-    this.horaSalida = horaSalida;
-}
+    public void setFrecuenciaRuta(int frecuenciaRuta){
+        this.frecuenciaRuta = frecuenciaRuta;
+    }
 
-public void setHoraLlegada(int horaLlegada){
-    this.horaLlegada = horaLlegada;
-}
+    public void setHoraSalida(int horaSalida){
+        this.horaSalida = horaSalida;
+    }
 
-public String getNombreRuta(){
-    return this.nombreRuta;
-}
+    public void setHoraLlegada(int horaLlegada){
+        this.horaLlegada = horaLlegada;
+    }
 
-public String CodigoRuta(){
-    return this.codigoRuta;
-}
+    public String getNombreRuta(){
+        return this.nombreRuta;
+    }
 
-public int getFrecuenciaRuta(){
-    return this.frecuenciaRuta;
-}
+    public String CodigoRuta(){
+        return this.codigoRuta;
+    }
 
-public int getHoraSalida(){
-    return this.horaSalida;
-}
+    public int getFrecuenciaRuta(){
+        return this.frecuenciaRuta;
+    }
 
-public int getHoraLlegada(){
-    return this.horaLlegada;
-}
+    public int getHoraSalida(){
+        return this.horaSalida;
+    }
+
+    public int getHoraLlegada(){
+        return this.horaLlegada;
+    }
 
 }
 

@@ -16,6 +16,15 @@ public class Vuelos {
     private String  [] azafatas;
     private String  [] pasajeros;
     
+public Vuelos(String namCiudadOrigen, String namCiudadDestino, String nombrePiloto, String nombreCopiloto, String [] azafatas, String [] pasajeros){
+    this.namCiudadOrigen = namCiudadOrigen;
+    this.namCiudadDestino = namCiudadDestino;
+    this.nombrePiloto = nombrePiloto;
+    this.nombreCopiloto = nombreCopiloto;
+    this.azafatas = azafatas;
+    this.pasajeros = pasajeros;
+}
+    
 public void setNamCiudadOrigen(String nombreCiudad){
     this.namCiudadOrigen = namCiudadOrigen;
     }

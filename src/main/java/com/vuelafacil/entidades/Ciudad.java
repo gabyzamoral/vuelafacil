@@ -9,18 +9,24 @@ package com.vuelafacil.entidades;
  * @author mariojurado
  */
 public class Ciudad {
+    private int identificador;
     private String nombreCiudad;
     private String nombreAeropuerto;
     private String codigoAeropuerto;
     private boolean estadoAeropuerto;
     
-    public Ciudad (String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){
+    public Ciudad (int identificador, String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){
+        this.identificador = identificador;
         this.nombreCiudad = nombreCiudad;
         this.nombreAeropuerto = nombreAeropuerto;
         this.codigoAeropuerto = codigoAeropuerto;
         this.estadoAeropuerto = estadoAeropuerto;
         }
     //  metodos set
+    
+public void setIdentificador(int identificador){
+        this.identificador = identificador;
+    }
     
     public void setNombreCiudad(String nombreCiudad){
         this.nombreCiudad = nombreCiudad;
@@ -39,6 +45,11 @@ public class Ciudad {
     }
     
     // métodos get
+    
+    public int getIdentificador(){
+        return this.identificador;
+    }
+    
     
     public String getNombreCiudad(){
         return this.nombreCiudad;

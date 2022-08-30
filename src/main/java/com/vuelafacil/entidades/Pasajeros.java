@@ -8,13 +8,30 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
+@Entity(name ="pasaid")
 public class Pasajeros {
+    @Id
+    @Column(name = "pasaid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pasaid;
+    
+    
+    @Column(name = "pasanombre", nullable = false, length = 100)    
     private String nombres;
+    
+    @Column(name = "pasaapellido", nullable = false, length = 100)    
     private String apellidos;
+    
+    @Column(name = "pasacorreoelectronico", nullable = false, length = 100)    
     private String correoElectronico;
+    
+    @Column(name = "pasacelular", nullable = false, length = 100)    
     private int numCelular;
 
 

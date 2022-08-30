@@ -31,7 +31,7 @@ public class Ciudad {
     @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    
     private String codigoAeropuerto;
 
-    @Column(name = "ciudhabilitado", nullable = false, length = 100)    
+    @Column(name = "ciudhabilitado", nullable = false)    
      private boolean estadoAeropuerto;
     
     public Ciudad (int identificador, String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){

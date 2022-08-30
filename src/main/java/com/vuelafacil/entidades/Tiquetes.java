@@ -8,7 +8,19 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity(name ="tiquid")
 public class Tiquetes {
+    
+    @Id
+    @Column(name = "tiquid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private boolean tipoClase;
     private boolean adicionalEquipaje;

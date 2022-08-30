@@ -8,12 +8,32 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name ="rutaid")
 public class Rutas {
+    @Id
+    @Column(name = "rutaid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rutaid;
+    
+    @Column(name = "rutanombre", nullable = false, length = 100)    
     private String nombreRuta;
+
+    @Column(name = "rutacodigo", nullable = false, length = 100)
     private String codigoRuta;
+
+
     private int frecuenciaRuta;
+
+    @Column(name = "rutafechahorasalida", nullable = false, length = 100)
     private int horaSalida;
+
+    @Column(name = "rutafechahorallegada", nullable = false, length = 100)
     private int horaLlegada;
 
     public Rutas (int rutaid, String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){

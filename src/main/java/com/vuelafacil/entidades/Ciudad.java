@@ -4,16 +4,35 @@
  */
 package com.vuelafacil.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author mariojurado
  */
+@Entity(name ="ciudid")
 public class Ciudad {
+    
+    @Id
+    @Column(name = "ciudid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int identificador;
+    
+    @Column(name = "ciudnombre", nullable = false, length = 100)
     private String nombreCiudad;
+    
+    @Column(name = "ciudnombreaeropueto", nullable = false, length = 100)    
     private String nombreAeropuerto;
+
+    @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    
     private String codigoAeropuerto;
-    private boolean estadoAeropuerto;
+
+    @Column(name = "ciudhabilitado", nullable = false, length = 100)    
+     private boolean estadoAeropuerto;
     
     public Ciudad (int identificador, String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){
         this.identificador = identificador;

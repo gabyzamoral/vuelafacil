@@ -8,6 +8,8 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+
+
 public class Pasajeros {
     private int pasaid;
     private String nombres;
@@ -16,7 +18,7 @@ public class Pasajeros {
     private int numCelular;
 
 
-public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
+    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
 
         this.pasaid = pasaid;
         this.nombres = nombres;
@@ -26,7 +28,7 @@ public Pasajeros (int pasaid, String nombres, String apellidos, String correoEle
 
     }
 
-public Pasajeros ( String nombres, String apellidos, String correoElectronico, int numCelular){
+    public Pasajeros ( String nombres, String apellidos, String correoElectronico, int numCelular){
 
         
         this.nombres = nombres;

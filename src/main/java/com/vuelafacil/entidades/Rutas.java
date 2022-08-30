@@ -25,6 +25,16 @@ public class Rutas {
         this.horaLlegada = horaLlegada;
 
     }
+ 
+    public Rutas ( String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+        
+        this.nombreRuta = nombreRuta;
+        this.codigoRuta = codigoRuta;
+        this.frecuenciaRuta = frecuenciaRuta;
+        this.horaSalida = horaSalida;
+        this.horaLlegada = horaLlegada;
+
+    }
 
     public void setRutaid(int rutaid){
        this.rutaid = rutaid;

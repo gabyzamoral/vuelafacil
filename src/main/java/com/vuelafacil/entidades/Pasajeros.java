@@ -16,9 +16,19 @@ public class Pasajeros {
     private int numCelular;
 
 
-    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
+public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
 
         this.pasaid = pasaid;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correoElectronico = correoElectronico;
+        this.numCelular = numCelular;
+
+    }
+
+public Pasajeros ( String nombres, String apellidos, String correoElectronico, int numCelular){
+
+        
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;

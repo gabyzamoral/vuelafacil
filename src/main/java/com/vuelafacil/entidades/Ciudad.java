@@ -21,10 +21,17 @@ public class Ciudad {
         this.nombreAeropuerto = nombreAeropuerto;
         this.codigoAeropuerto = codigoAeropuerto;
         this.estadoAeropuerto = estadoAeropuerto;
-        }
+    }
+
+    public Ciudad (String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){
+        this.nombreCiudad = nombreCiudad;
+        this.nombreAeropuerto = nombreAeropuerto;
+        this.codigoAeropuerto = codigoAeropuerto;
+        this.estadoAeropuerto = estadoAeropuerto;
+    }
     //  metodos set
     
-public void setIdentificador(int identificador){
+    public void setIdentificador(int identificador){
         this.identificador = identificador;
     }
     

@@ -9,14 +9,16 @@ package com.vuelafacil.entidades;
  * @author mariojurado
  */
 public class Pasajeros {
+    private int pasaid;
     private String nombres;
     private String apellidos;
     private String correoElectronico;
     private int numCelular;
 
 
-    public Pasajeros (String nombres, String apellidos, String correoElectronico, int numCelular){
+    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
 
+        this.pasaid = pasaid;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;
@@ -24,6 +26,10 @@ public class Pasajeros {
 
     }
 
+    public void setPasaid(int pasaid){
+        this.pasaid = pasaid;
+    }
+    
     public void setNombres(String nombres){
          this.nombres = nombres;
     }
@@ -39,6 +45,11 @@ public class Pasajeros {
     public void setNumeroCelular(int numCelular){
         this.numCelular = numCelular;
     }
+
+    public int getPasaid(){
+        return this.pasaid;
+    }
+    
 
     public String getNombres(){
         return this.nombres;

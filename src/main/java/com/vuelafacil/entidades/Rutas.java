@@ -9,13 +9,15 @@ package com.vuelafacil.entidades;
  * @author mariojurado
  */
 public class Rutas {
+    private int rutaid;
     private String nombreRuta;
     private String codigoRuta;
     private int frecuenciaRuta;
     private int horaSalida;
     private int horaLlegada;
 
-    public Rutas (String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+        this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
         this.frecuenciaRuta = frecuenciaRuta;
@@ -23,6 +25,11 @@ public class Rutas {
         this.horaLlegada = horaLlegada;
 
     }
+
+    public void setRutaid(int rutaid){
+       this.rutaid = rutaid;
+    }
+    
 
     public void setNombreRuta(String nombreRuta){
         this.nombreRuta = nombreRuta;
@@ -43,6 +50,11 @@ public class Rutas {
     public void setHoraLlegada(int horaLlegada){
         this.horaLlegada = horaLlegada;
     }
+
+    public int getRutaid(){
+        return this.rutaid;
+    }
+    
 
     public String getNombreRuta(){
         return this.nombreRuta;

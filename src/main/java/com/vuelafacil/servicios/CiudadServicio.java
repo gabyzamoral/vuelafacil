@@ -20,8 +20,9 @@ public class CiudadServicio {
     @Autowired
     private ICiudadrepository repo;
    
-    public void crearNuevaCiudad(Ciudad c){
-        
+    public Ciudad crearNuevaCiudad(Ciudad c){
+        Ciudad  ciu =repo.save(c);
+        return ciu;
     }
    
     public List<Ciudad> consultarCiudad(){
@@ -29,8 +30,8 @@ public class CiudadServicio {
         return lista;
     }   
     
-    public List<Ciudad> consultarCiudad(String ciudnombre){
-        List<Ciudad> lista = repo.findByNombreContaining(ciudnombre);
+    public List<Ciudad> consultarCiudad(String criterio){
+        List<Ciudad> lista = repo.findByNombreContaining(criterio);
         return lista;
     }
     public Ciudad consularltarCiudad(int ciudid){
@@ -42,8 +43,9 @@ public class CiudadServicio {
         
     }
     
-    public void actualizarCiudad(Ciudad c){
-        
+    public Ciudad actualizarCiudad(Ciudad c){
+        Ciudad ciu = repo.save(c);
+        return ciu;
     }
     
 }

@@ -34,7 +34,10 @@ public class Pasajeros {
     @Column(name = "pasacelular", nullable = false, length = 100)    
     private int numCelular;
 
-
+    public Pasajeros(){
+        
+    }
+    
     public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
 
         this.pasaid = pasaid;

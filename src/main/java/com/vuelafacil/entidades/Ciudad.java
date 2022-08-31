@@ -31,8 +31,13 @@ public class Ciudad {
     @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    
     private String codigoAeropuerto;
 
-    @Column(name = "ciudhabilitado", nullable = false)    
-     private boolean estadoAeropuerto;
+    @Column(name = "ciudhabilitado", columnDefinition = "TYNYINT(1)")    
+    private boolean estadoAeropuerto;
+    
+    
+    public Ciudad(){
+        
+    }
     
     public Ciudad (int identificador, String nombreCiudad, String nombreAeropuerto, String codigoAeropuerto, boolean estadoAeropuerto){
         this.identificador = identificador;

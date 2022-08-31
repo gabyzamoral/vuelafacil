@@ -31,6 +31,11 @@ public class PasajerosServicio {
     public List<Pasajeros> consultarPasajero(String criterio){
         List<Pasajeros> lista = repo.findByNombreContaining(criterio);
         return lista;
+    }
+
+    public Pasajeros consultarPasajero(int pasaid){
+        Pasajeros c = repo.findById(pasaid).get();
+        return c;
     }    
     
      public Pasajeros actualizarPasajeros(Pasajeros c){

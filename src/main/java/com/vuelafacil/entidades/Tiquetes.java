@@ -29,6 +29,10 @@ public class Tiquetes {
     private String puertaSalida;
     private int valorTiquete;
     
+    public Tiquetes(){
+    
+        }
+    
     public Tiquetes (int tiquid, boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
 
         this.tiquid = tiquid;
@@ -49,7 +53,7 @@ public class Tiquetes {
 
     public void setTiquid(int tiquid) {
         this.tiquid = tiquid;
-    }
+        }
 
     
     

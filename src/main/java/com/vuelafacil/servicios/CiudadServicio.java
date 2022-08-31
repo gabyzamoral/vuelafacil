@@ -34,7 +34,7 @@ public class CiudadServicio {
         List<Ciudad> lista = repo.findByNombreContaining(criterio);
         return lista;
     }
-    public Ciudad consularltarCiudad(int ciudid){
+    public Ciudad consultarCiudad(int ciudid){
         Ciudad c = repo.findById(ciudid).get();
         return c;
     }

@@ -25,7 +25,7 @@ public class Ciudad {
     @Column(name = "ciudnombre", nullable = false, length = 100)
     private String nombreCiudad;
     
-    @Column(name = "ciudnombreaeropueto", nullable = false, length = 100)    
+    @Column(name = "ciudnombreaeropuerto", nullable = false, length = 100)    
     private String nombreAeropuerto;
 
     @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    

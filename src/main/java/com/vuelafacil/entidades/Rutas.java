@@ -34,6 +34,7 @@ public class Rutas {
     @Column(name = "rutaciudaddestino", nullable = false, length = 100)
     private int rutaciudaddestino;
 
+    @Column(name = "rutafrecuencia", nullable = false, length = 100)
     private int frecuenciaRuta;
 
     @Column(name = "rutafechahorasalida", nullable = false, length = 100)

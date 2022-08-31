@@ -21,6 +21,7 @@ public class Tiquetes {
     @Id
     @Column(name = "tiquid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int tiquid;
     
     private boolean tipoClase;
     private boolean adicionalEquipaje;
@@ -28,14 +29,30 @@ public class Tiquetes {
     private String puertaSalida;
     private int valorTiquete;
     
-    public Tiquetes (boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
+    public Tiquetes (int tiquid, boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
 
+        this.tiquid = tiquid;
         this.tipoClase = tipoClase;
         this.adicionalEquipaje = adicionalEquipaje;
         this.puertaAbordaje = puertaAbordaje;
         this.puertaSalida = puertaSalida;
+        }
+    
+    public Tiquetes ( boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
+
+        
+        this.tipoClase = tipoClase;
+        this.adicionalEquipaje = adicionalEquipaje;
+        this.puertaAbordaje = puertaAbordaje;
+        this.puertaSalida = puertaSalida;
+        }
+
+    public void setTiquid(int tiquid) {
+        this.tiquid = tiquid;
     }
 
+    
+    
     public void setTipoClase(boolean tipoClase){
         this.tipoClase = tipoClase;
         }
@@ -56,6 +73,11 @@ public class Tiquetes {
         this.valorTiquete = valorTiquete;
         }
 
+    
+    public int getTiquid() {
+        return tiquid;
+        }
+    
     public boolean getTipoClase(){
         return this.tipoClase;
         }

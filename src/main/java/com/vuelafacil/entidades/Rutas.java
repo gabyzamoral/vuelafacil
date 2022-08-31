@@ -26,7 +26,13 @@ public class Rutas {
 
     @Column(name = "rutacodigo", nullable = false, length = 100)
     private String codigoRuta;
-
+    
+    @Column(name = "rutaciudadorigen", nullable = false, length = 100)
+    private int rutaciudadorigen;
+    
+    
+    @Column(name = "rutaciudaddestino", nullable = false, length = 100)
+    private int rutaciudaddestino;
 
     private int frecuenciaRuta;
 
@@ -36,10 +42,12 @@ public class Rutas {
     @Column(name = "rutafechahorallegada", nullable = false, length = 100)
     private int horaLlegada;
 
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, int frecuenciaRuta, int horaSalida, int horaLlegada){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
+        this.rutaciudadorigen = rutaciudadorigen;
+        this.rutaciudaddestino = rutaciudaddestino;
         this.frecuenciaRuta = frecuenciaRuta;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
@@ -65,6 +73,15 @@ public class Rutas {
         this.nombreRuta = nombreRuta;
     }
 
+    public void setRutaCiudadOrigen(int rutaciudadorigen) {
+        this.rutaciudadorigen = rutaciudadorigen;
+    }
+
+    public void setRutaCiudadDestino(int rutaciudaddestino) {
+        this.rutaciudaddestino = rutaciudaddestino;
+    }
+
+    
     public void setCodigoRuta(String codigoRuta){
         this.codigoRuta = codigoRuta;
     }
@@ -90,8 +107,16 @@ public class Rutas {
         return this.nombreRuta;
     }
 
-    public String CodigoRuta(){
+    public String getCodigoRuta(){
         return this.codigoRuta;
+    }
+
+    public int getRutaCiudadOrigen() {
+        return rutaciudadorigen;
+    }
+
+    public int getRutaCiudadDestino() {
+        return rutaciudaddestino;
     }
 
     public int getFrecuenciaRuta(){

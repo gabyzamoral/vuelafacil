@@ -14,7 +14,7 @@ import javax.persistence.Id;
  *
  * @author mariojurado
  */
-@Entity(name ="ciudid")
+@Entity(name ="ciudad")
 public class Ciudad {
     
     @Id
@@ -31,7 +31,7 @@ public class Ciudad {
     @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    
     private String codigoAeropuerto;
 
-    @Column(name = "ciudhabilitado", columnDefinition = "TYNYINT(1)")    
+    @Column(name = "ciudhabilitado", columnDefinition = "TinyINT")    
     private boolean estadoAeropuerto;
     
     

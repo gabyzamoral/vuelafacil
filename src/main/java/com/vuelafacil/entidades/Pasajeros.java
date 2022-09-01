@@ -14,7 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name ="pasaid")
+@Entity(name ="pasajero")
 public class Pasajeros {
     @Id
     @Column(name = "pasaid")
@@ -32,13 +32,13 @@ public class Pasajeros {
     private String correoElectronico;
     
     @Column(name = "pasacelular", nullable = false, length = 100)    
-    private int numCelular;
+    private String numCelular;
 
     public Pasajeros(){
         
     }
     
-    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, int numCelular){
+    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, String numCelular){
 
         this.pasaid = pasaid;
         this.nombres = nombres;
@@ -48,7 +48,7 @@ public class Pasajeros {
 
     }
 
-    public Pasajeros ( String nombres, String apellidos, String correoElectronico, int numCelular){
+    public Pasajeros ( String nombres, String apellidos, String correoElectronico, String numCelular){
 
         
         this.nombres = nombres;
@@ -74,7 +74,7 @@ public class Pasajeros {
         this.correoElectronico = correoElectronico;
     }
     
-    public void setNumeroCelular(int numCelular){
+    public void setNumeroCelular(String numCelular){
         this.numCelular = numCelular;
     }
 
@@ -95,7 +95,7 @@ public class Pasajeros {
         return this.correoElectronico;
     }
     
-    public int  getNumCelular(){
+    public String  getNumCelular(){
         return this.numCelular;
     }
 

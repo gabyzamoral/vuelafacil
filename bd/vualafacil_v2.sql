@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `ciudad` (
   `ciudid` int(6) NOT NULL COMMENT 'Identificador de la tabla ciudad',
   `ciudnombre` varchar(80) NOT NULL COMMENT 'Nombre de la ciudad',
-  `ciudnombreaeropueto` varchar(100) NOT NULL COMMENT 'Nombre del aeropuerto de la ciudad',
+  `ciudnombreaeropuerto` varchar(100) NOT NULL COMMENT 'Nombre del aeropuerto de la ciudad',
   `ciudcodigoaeropuerto` varchar(3) NOT NULL COMMENT 'Código identificador del aeropuerto',
   `ciudhabilitado` tinyint(4) NOT NULL COMMENT 'Ciudad habilitada'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

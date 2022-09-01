@@ -14,11 +14,11 @@ import javax.persistence.Id;
  *
  * @author mariojurado
  */
-@Entity(name ="usuaid")
+@Entity(name ="usuario")
 public class Usuarios {
 
     @Id
-    @Column(name = "ciudid")
+    @Column(name = "usuaid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int usuaid;
     
@@ -40,13 +40,17 @@ public class Usuarios {
     @Column(name = "usuausuario", nullable = false, length = 100)   
     private String usuausuario;
     
-    @Column(name = "usuacontraseña", nullable = false, length = 100)   
-    private String usuacontraseña;
+    @Column(name = "usuacontrasena", nullable = false, length = 100)   
+    private String usuacontrasena;
     
     @Column(name = "usuatipousuario", nullable = false, length = 100)   
     private int usuatipousuario;
 
-    public Usuarios(int usuaid, String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontraseña, int usuatipousuario) {
+    public Usuarios() {
+    }
+
+
+    public Usuarios(int usuaid, String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontrasena, int usuatipousuario) {
         this.usuaid = usuaid;
         this.nombreUsuario = nombreUsuario;
         this.usuaapellido = usuaapellido;
@@ -54,18 +58,18 @@ public class Usuarios {
         this.usuadireccion = usuadireccion;
         this.usuatelefono = usuatelefono;
         this.usuausuario = usuausuario;
-        this.usuacontraseña = usuacontraseña;
+        this.usuacontrasena = usuacontrasena;
         this.usuatipousuario = usuatipousuario;
     }
 
-    public Usuarios(String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontraseña, int usuatipousuario) {
+    public Usuarios(String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontrasena, int usuatipousuario) {
         this.nombreUsuario = nombreUsuario;
         this.usuaapellido = usuaapellido;
         this.usuadocumento = usuadocumento;
         this.usuadireccion = usuadireccion;
         this.usuatelefono = usuatelefono;
         this.usuausuario = usuausuario;
-        this.usuacontraseña = usuacontraseña;
+        this.usuacontrasena = usuacontrasena;
         this.usuatipousuario = usuatipousuario;
     }
 
@@ -97,8 +101,8 @@ public class Usuarios {
         this.usuausuario = usuausuario;
     }
 
-    public void setUsuaContraseña(String usuacontraseña) {
-        this.usuacontraseña = usuacontraseña;
+    public void setUsuaContrasena(String usuacontrasena) {
+        this.usuacontrasena = usuacontrasena;
     }
 
     public void setUsuaTipoUsuario(int usuatipousuario) {
@@ -134,8 +138,8 @@ public class Usuarios {
         return usuausuario;
     }
 
-    public String getUsuaContraseña() {
-        return usuacontraseña;
+    public String getUsuaContrasena() {
+        return usuacontrasena;
     }
 
     public int getUsuaTipoUsuario() {

@@ -12,5 +12,5 @@ import org.springframework.stereotype.Repository;
  * @author mariojurado
  */
 public interface ITiquetesrepository extends JpaRepository<Tiquetes, Integer> {
-    public List<Tiquetes> findByNombreContaining(String criterio);
+    public List<Tiquetes> findByTiquclasepreferencialContaining(String criterio);
 }

@@ -8,6 +8,7 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
-@Entity(name ="tiquid")
+@Entity(name ="tiquete")
 public class Tiquetes {
     
     @Id
@@ -23,84 +24,65 @@ public class Tiquetes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int tiquid;
     
-    private boolean tipoClase;
-    private boolean adicionalEquipaje;
-    private String puertaAbordaje;
-    private String puertaSalida;
-    private int valorTiquete;
+    @Column(name = "tiquclasepreferencial", columnDefinition = "TinyINT")      
+    private boolean tiquclasepreferencial;
     
-    public Tiquetes(){
-    
-        }
-    
-    public Tiquetes (int tiquid, boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
+    @Column(name = "tiqupuesto", nullable = false, length = 100)
+    private int tiqupuesto;
+  
+    @Column(name = "tiqufechahoraregistro", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")    
+    private Date tiqufechahoraregistro;
 
+    public Tiquetes() {
+    }
+
+    
+    
+    public Tiquetes(int tiquid, boolean tiquclasepreferencial, int tiqupuesto, Date tiqufechahoraregistro) {
         this.tiquid = tiquid;
-        this.tipoClase = tipoClase;
-        this.adicionalEquipaje = adicionalEquipaje;
-        this.puertaAbordaje = puertaAbordaje;
-        this.puertaSalida = puertaSalida;
-        }
-    
-    public Tiquetes ( boolean tipoClase, boolean adicionalEquipaje, String puertaAbordaje, String puertaSalida, int valorTiquete){
+        this.tiquclasepreferencial = tiquclasepreferencial;
+        this.tiqupuesto = tiqupuesto;
+        this.tiqufechahoraregistro = tiqufechahoraregistro;
+    }
 
-        
-        this.tipoClase = tipoClase;
-        this.adicionalEquipaje = adicionalEquipaje;
-        this.puertaAbordaje = puertaAbordaje;
-        this.puertaSalida = puertaSalida;
-        }
+    public Tiquetes(boolean tiquclasepreferencial, int tiqupuesto, Date tiqufechahoraregistro) {
+        this.tiquclasepreferencial = tiquclasepreferencial;
+        this.tiqupuesto = tiqupuesto;
+        this.tiqufechahoraregistro = tiqufechahoraregistro;
+    }
+
+    public int getTiquid() {
+        return tiquid;
+    }
 
     public void setTiquid(int tiquid) {
         this.tiquid = tiquid;
-        }
+    }
+
+    public boolean isTiquclasepreferencial() {
+        return tiquclasepreferencial;
+    }
+
+    public void setTiquclasepreferencial(boolean tiquclasepreferencial) {
+        this.tiquclasepreferencial = tiquclasepreferencial;
+    }
+
+    public int getTiqupuesto() {
+        return tiqupuesto;
+    }
+
+    public void setTiqupuesto(int tiqupuesto) {
+        this.tiqupuesto = tiqupuesto;
+    }
+
+    public Date getTiqufechahoraregistro() {
+        return tiqufechahoraregistro;
+    }
+
+    public void setTiqufechahoraregistro(Date tiqufechahoraregistro) {
+        this.tiqufechahoraregistro = tiqufechahoraregistro;
+    }
 
     
-    
-    public void setTipoClase(boolean tipoClase){
-        this.tipoClase = tipoClase;
-        }
-
-    public void setAdicionalEquipaje(boolean adicionalEquipaje){
-        this.adicionalEquipaje = adicionalEquipaje;
-        }
-
-    public void setPuertaAbordaje(String puertaAbordaje){
-        this.puertaAbordaje = puertaAbordaje;
-        }
-
-    public void setPuertaSalida(String puertaSalida){
-        this.puertaSalida = puertaSalida;
-        }
-    
-    public void setValorTiquete(int valorTiquete){
-        this.valorTiquete = valorTiquete;
-        }
-
-    
-    public int getTiquid() {
-        return tiquid;
-        }
-    
-    public boolean getTipoClase(){
-        return this.tipoClase;
-        }
-
-    public boolean getAdicionalEquipaje(){
-        return this.adicionalEquipaje;
-        }
-
-    public String getPuertaAbordaje(){
-        return this.puertaAbordaje;
-        }
-
-    public String getPuertaSalida(){
-        return this.puertaSalida;
-        }
-    
-    public int getValorTiquete(){
-        return this.valorTiquete;
-        }
-
 
 }

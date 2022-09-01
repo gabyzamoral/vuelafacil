@@ -4,6 +4,7 @@
  */
 package com.vuelafacil.respositorios;
 
+
 import com.vuelafacil.entidades.Ciudad;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ICiudadrepository extends JpaRepository<Ciudad, Integer> {
-    public List<Ciudad> findByNombreContaining(String criterio);
+    public List<Ciudad> findByNombreCiudadContaining(String criterio);
 }

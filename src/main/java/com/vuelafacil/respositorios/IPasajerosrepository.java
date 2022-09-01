@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface IPasajerosrepository extends JpaRepository<Pasajeros, Integer> {
-    public List<Pasajeros> findByNombreContaining(String criterio);
+    public List<Pasajeros> findByNombresContaining(String criterio);
 }

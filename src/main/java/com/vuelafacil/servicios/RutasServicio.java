@@ -28,12 +28,12 @@ public class RutasServicio {
     }
 
     public List<Rutas> consultarRutas(String criterio){
-        List<Rutas> lista = repo.findByNombreContaining(criterio);
+        List<Rutas> lista = repo.findByNombreRutaContaining(criterio);
         return lista; 
     }
     
-    public Rutas consularltarRutas(int rutaid){
-        Rutas c = repo.findById(rutaid).get();
+    public Rutas consularltarRutas(int Rutaid){
+        Rutas c = repo.findById(Rutaid).get();
         return c;
     }
  

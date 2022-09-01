@@ -29,12 +29,12 @@ public class TiquetesServicio {
     } 
  
     public List<Tiquetes> consultarTiquetes(String criterio){
-        List<Tiquetes> lista = repo.findByNombreContaining(criterio);
+        List<Tiquetes> lista = repo.findByTiquclasepreferencialContaining(criterio);
         return lista;
     }
 
-    public Tiquetes consultarCiudad(int tiquid){
-        Tiquetes c = repo.findById(tiquid).get();
+    public Tiquetes consultarCiudad(int Tiquid){
+        Tiquetes c = repo.findById(Tiquid).get();
         return c;
     }    
 

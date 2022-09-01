@@ -22,13 +22,13 @@ public class Ciudad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int identificador;
     
-    @Column(name = "ciudnombre", nullable = false, length = 100)
+    @Column(name = "ciudnombre", nullable = false, length = 80)
     private String nombreCiudad;
     
     @Column(name = "ciudnombreaeropuerto", nullable = false, length = 100)    
     private String nombreAeropuerto;
 
-    @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 100)    
+    @Column(name = "ciudcodigoaeropuerto", nullable = false, length = 3)    
     private String codigoAeropuerto;
 
     @Column(name = "ciudhabilitado", columnDefinition = "TinyINT")    
@@ -94,13 +94,6 @@ public class Ciudad {
        return this.codigoAeropuerto;
     }
     
-    // Formato para imprimir la información
-    public String toString(){
-           return "Nombre Ciudad: " + this.nombreCiudad + "\n" +
-                  "Nombre Aeropuerto: " + this.nombreAeropuerto + "\n" +
-                  "código Aeropuerto: " + this.codigoAeropuerto + "\n" +
-                  "Estado Aeropuerto: " + this.estadoAeropuerto;
-    	
-    }
+    
     
 }

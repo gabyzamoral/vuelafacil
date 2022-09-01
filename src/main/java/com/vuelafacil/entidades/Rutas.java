@@ -8,11 +8,13 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity(name ="ruta")
 public class Rutas {
@@ -28,38 +30,37 @@ public class Rutas {
     private String codigoRuta;
     
     @Column(name = "rutaciudadorigen", nullable = false, length = 100)
-    private int rutaciudadorigen;
+    private String rutaciudadorigen;
     
     
     @Column(name = "rutaciudaddestino", nullable = false, length = 100)
-    private int rutaciudaddestino;
+    private String rutaciudaddestino;
 
-    @Column(name = "rutafrecuencia", nullable = false, length = 100)
-    private int frecuenciaRuta;
 
-    @Column(name = "rutafechahorasalida", nullable = false, length = 100)
-    private int horaSalida;
 
-    @Column(name = "rutafechahorallegada", nullable = false, length = 100)
-    private int horaLlegada;
+    @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date horaSalida;
 
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, int frecuenciaRuta, int horaSalida, int horaLlegada){
+    @Column(name = "rutafechahorallegada", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date horaLlegada;
+
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, Date horaSalida, Date horaLlegada){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
         this.rutaciudadorigen = rutaciudadorigen;
         this.rutaciudaddestino = rutaciudaddestino;
-        this.frecuenciaRuta = frecuenciaRuta;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
 
     }
  
-    public Rutas ( String nombreRuta, String codigoRuta, int frecuenciaRuta, int horaSalida, int horaLlegada){
+    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, Date horaSalida, Date horaLlegada){
         
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
-        this.frecuenciaRuta = frecuenciaRuta;
+        this.rutaciudadorigen = rutaciudadorigen;
+        this.rutaciudaddestino = rutaciudaddestino;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
 
@@ -74,11 +75,11 @@ public class Rutas {
         this.nombreRuta = nombreRuta;
     }
 
-    public void setRutaCiudadOrigen(int rutaciudadorigen) {
+    public void setRutaCiudadOrigen(String rutaciudadorigen) {
         this.rutaciudadorigen = rutaciudadorigen;
     }
 
-    public void setRutaCiudadDestino(int rutaciudaddestino) {
+    public void setRutaCiudadDestino(String rutaciudaddestino) {
         this.rutaciudaddestino = rutaciudaddestino;
     }
 
@@ -87,15 +88,13 @@ public class Rutas {
         this.codigoRuta = codigoRuta;
     }
 
-    public void setFrecuenciaRuta(int frecuenciaRuta){
-        this.frecuenciaRuta = frecuenciaRuta;
-    }
 
-    public void setHoraSalida(int horaSalida){
+
+    public void setHoraSalida(Date horaSalida){
         this.horaSalida = horaSalida;
     }
 
-    public void setHoraLlegada(int horaLlegada){
+    public void setHoraLlegada(Date horaLlegada){
         this.horaLlegada = horaLlegada;
     }
 
@@ -112,23 +111,21 @@ public class Rutas {
         return this.codigoRuta;
     }
 
-    public int getRutaCiudadOrigen() {
+    public String getRutaCiudadOrigen() {
         return rutaciudadorigen;
     }
 
-    public int getRutaCiudadDestino() {
+    public String getRutaCiudadDestino() {
         return rutaciudaddestino;
     }
 
-    public int getFrecuenciaRuta(){
-        return this.frecuenciaRuta;
-    }
 
-    public int getHoraSalida(){
+
+    public Date getHoraSalida(){
         return this.horaSalida;
     }
 
-    public int getHoraLlegada(){
+    public Date getHoraLlegada(){
         return this.horaLlegada;
     }
 

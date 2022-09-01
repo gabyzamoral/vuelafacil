@@ -31,17 +31,15 @@ public class CiudadServicio {
     }   
     
     public List<Ciudad> consultarCiudad(String criterio){
-        List<Ciudad> lista = repo.findByNombreContaining(criterio);
+        List<Ciudad> lista = repo.findByNombreCiudadContaining(criterio);
         return lista;
     }
-    public Ciudad consultarCiudad(int ciudid){
-        Ciudad c = repo.findById(ciudid).get();
+    public Ciudad consultarCiudad(int Identificador){
+        Ciudad c = repo.findById(Identificador).get();
         return c;
     }
     
-    public void deshabilitarCiudad(Ciudad c){
-        
-    }
+
     
     public Ciudad actualizarCiudad(Ciudad c){
         Ciudad ciu = repo.save(c);

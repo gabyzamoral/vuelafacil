@@ -29,12 +29,12 @@ public class PasajerosServicio {
     }
     
     public List<Pasajeros> consultarPasajero(String criterio){
-        List<Pasajeros> lista = repo.findByNombreContaining(criterio);
+        List<Pasajeros> lista = repo.findByNombresContaining(criterio);
         return lista;
     }
 
-    public Pasajeros consultarPasajero(int pasaid){
-        Pasajeros c = repo.findById(pasaid).get();
+    public Pasajeros consultarPasajero(int Pasaid){
+        Pasajeros c = repo.findById(Pasaid).get();
         return c;
     }    
     

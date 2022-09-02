@@ -22,6 +22,9 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-target/vuelafacil-0.0.1-SNAPSHOT.jar.original
-target/vuelafacil-0.0.1-SNAPSHOT.jar.original
-target/vuelafacil-0.0.1-SNAPSHOT.jar.original
+
+# Incluir carpeta target
+target/
+
+
+

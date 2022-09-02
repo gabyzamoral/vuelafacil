@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-08-2022 a las 15:52:11
+-- Tiempo de generación: 26-08-2022 a las 15:14:22
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ciudad` (
-  `ciudid` int(6) NOT NULL,
+  `ciudid` int(6) NOT NULL COMMENT 'Identificador de la tabla ciudad',
   `ciudnombre` varchar(80) NOT NULL COMMENT 'Nombre de la ciudad',
   `ciudnombreaeropuerto` varchar(100) NOT NULL COMMENT 'Nombre del aeropuerto de la ciudad',
   `ciudcodigoaeropuerto` varchar(3) NOT NULL COMMENT 'Código identificador del aeropuerto',
@@ -57,13 +57,12 @@ CREATE TABLE `pasajero` (
 
 CREATE TABLE `ruta` (
   `rutaid` int(6) NOT NULL COMMENT 'Identificador de la tabla ruta',
+  `ciudidorigen` int(6) NOT NULL COMMENT 'Identificador de la ciudad de origen',
+  `ciudiddestino` int(6) NOT NULL COMMENT 'Identificador de la ciudad de destino',
   `rutacodigo` varchar(10) NOT NULL COMMENT 'Código único de la ruta',
   `rutanombre` varchar(80) NOT NULL COMMENT 'Nombre de la ruta',
-  `rutaciudadorigen` int(100) NOT NULL COMMENT 'Ciudad y aeropuerto de origen de la ruta',
-  `rutaciudaddestino` varchar(100) NOT NULL COMMENT 'Ciudad y aeropuerto de destino de la ruta',
   `rutafechahorasalida` datetime NOT NULL COMMENT 'Fecha hora de salida de la ruta',
   `rutafechahorallegada` datetime NOT NULL COMMENT 'Fecha hora de llegada de la ruta'
-  `rutafrecuencia` int(100) NOT NULL COMMENT 'frecuencia vuelos'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -94,9 +93,10 @@ INSERT INTO `tipodocumento` (`tipdocid`, `tipdocsigla`, `tipdocnombre`) VALUES
 
 CREATE TABLE `tiquete` (
   `tiquid` int(6) NOT NULL COMMENT 'Identificador del tiquete',
+  `usuaid` int(6) NOT NULL COMMENT 'Identificador del usuario que realiza el registro',
   `vuelid` int(6) NOT NULL COMMENT 'identificador del vuelo',
   `pasaid` int(6) NOT NULL COMMENT 'identificador del pasajero',
-  `tiquclasepreferencial` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'Determina si es clase preferencial',
+  `tiquclasepreferencial` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Determina si es clase preferencial',
   `tiqupuesto` int(2) NOT NULL COMMENT 'Puesto del avión',
   `tiqufechahoraregistro` datetime NOT NULL COMMENT 'Fecha hora en que se realiza el registro en el sistema'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -111,12 +111,12 @@ CREATE TABLE `usuario` (
   `usuaid` int(6) NOT NULL COMMENT 'Identificado de la tabla usuario',
   `tipdocid` int(4) NOT NULL COMMENT 'Identificador del tipo de documento',
   `usuanombre` varchar(50) NOT NULL COMMENT 'Nombre del usuario',
-  `usuaapellido` varchar(50) NOT NULL COMMENT 'Apellidos del usuario',
+  `usuaapellido` int(50) NOT NULL COMMENT 'Apellidos del usuario',
   `usuadocumento` varchar(50) NOT NULL COMMENT 'Documento del usuario',
   `usuadireccion` varchar(60) DEFAULT NULL COMMENT 'Dirección del usuario',
   `usuatelefono` varchar(20) DEFAULT NULL COMMENT 'Teléfono del usuario',
   `usuausuario` varchar(20) NOT NULL COMMENT 'Usuario de ingreso al sistema',
-  `usuacontrasena` varchar(20) NOT NULL COMMENT 'Contraseña del usuario',
+  `usuacontrasena` int(20) NOT NULL COMMENT 'Contraseña del usuario',
   `usuatipousuario` int(1) NOT NULL COMMENT 'Tipo de usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -168,15 +168,16 @@ ALTER TABLE `tipodocumento`
 --
 ALTER TABLE `tiquete`
   ADD PRIMARY KEY (`tiquid`),
+  ADD KEY `fk_tiqupasa` (`pasaid`),
   ADD KEY `fk_tiquvuel` (`vuelid`),
-  ADD KEY `fk_tiqupasa` (`pasaid`);
+  ADD KEY `fk_tiquusua` (`usuaid`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`usuaid`),
-  ADD KEY `fk_tipdocusua` (`tipdocid`);
+  ADD KEY `fk_usuatipdoc` (`tipdocid`);
 
 --
 -- Indices de la tabla `vuelo`
@@ -230,17 +231,25 @@ ALTER TABLE `vuelo`
 --
 
 --
+-- Filtros para la tabla `ruta`
+--
+ALTER TABLE `ruta`
+  ADD CONSTRAINT `fk_rutaciuddestino` FOREIGN KEY (`rutaid`) REFERENCES `ciudad` (`ciudid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_rutaciudorigen` FOREIGN KEY (`rutaid`) REFERENCES `ciudad` (`ciudid`) ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `tiquete`
 --
 ALTER TABLE `tiquete`
-  ADD CONSTRAINT `fk_tiqupasa` FOREIGN KEY (`pasaid`) REFERENCES `pasajero` (`pasaid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_tiquvuel` FOREIGN KEY (`vuelid`) REFERENCES `vuelo` (`vuelid`);
+  ADD CONSTRAINT `fk_tiqupasa` FOREIGN KEY (`pasaid`) REFERENCES `pasajero` (`pasaid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tiquusua` FOREIGN KEY (`usuaid`) REFERENCES `usuario` (`usuaid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tiquvuel` FOREIGN KEY (`vuelid`) REFERENCES `vuelo` (`vuelid`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_tipdocusua` FOREIGN KEY (`tipdocid`) REFERENCES `tipodocumento` (`tipdocid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_usuatipdoc` FOREIGN KEY (`tipdocid`) REFERENCES `tipodocumento` (`tipdocid`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vuelo`

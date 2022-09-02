@@ -1,2 +1,19 @@
-C:\Users\Edward Henao1\Documents\NetBeansProjects\vuelaFacil\src\main\java\com\vuelafacil\controladores\ControladorPrincipal.java
-C:\Users\Edward Henao1\Documents\NetBeansProjects\vuelaFacil\src\main\java\com\vuelafacil\VuelafacilApplication.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Usuarios.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/VuelafacilApplication.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Rutas.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/respositorios/ICiudadrepository.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/Login.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/servicios/UsuarioServicios.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Ciudad.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/servicios/PasajerosServicio.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/controladores/ControladorPrincipal.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/respositorios/IUsuariorepository.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Pasajeros.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/respositorios/ITiquetesrepository.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Vuelos.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/respositorios/IRutasrepository.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/entidades/Tiquetes.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/servicios/CiudadServicio.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/servicios/TiquetesServicio.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/servicios/RutasServicio.java
+/home/mariojurado/Descargas/prueba2/src/main/java/com/vuelafacil/respositorios/IPasajerosrepository.java

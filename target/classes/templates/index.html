@@ -1,63 +1,135 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Vuela Facil</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Expires" content="0" />
+  <head>
+    <title>Vuela Facil</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0" />
 
-        <!--Tag para el control de la memoria cache en los dispositivos-->
-        <meta http-equiv="Last-Modified" content="0" />
-        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-red">
-                <div class="container-fluid">                                        
-                    <a class="navbar-brand" href="#">Aqui va el logo de Vuela Facil</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Reservas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Destinos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Promociones</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Checking</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Servicios Adicionales</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio de Sesión</a>
-                            </li>                            
-                        </ul>                        
-                    </div>
-                </div>
-            </nav>
-
-        </header>
-
-        <div class="row">
-            <div class="col-6"> hola</div>
-            <div class="col-6"> hola 2</div>
+    <!--Tag para el control de la memoria cache en los dispositivos-->
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="menu" class="padre-navbar">
+        <ul>
+          <!--
+          <li>
+            <a class="btn-logo" href="">Vuela Facil</a>
+          </li>
+          -->
+          <li>
+            <a href="">Reservas</a>
+          </li>
+          <li>
+            <a href="">Destinos</a>
+          </li>
+          <li>
+            <a href="">Promociones</a>
+          </li>
+          <li>
+            <a href="">Checking</a>
+          </li>
+          <li>
+            <a href="">Servicios adicionales</a>
+          </li>
+          <li>
+            <a href="" class="btn-sesion">Inicia Sesión</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="banner">
+      <div class="logo-banner">
+        <div class="info-banner">
+          <img src="logo.png" alt="logo" />
+          <p>Llegamos para quedarnos</p>
+          <h1>Viaja a destinos increíbles con nuestras rutas locales</h1>
         </div>
-
-        <div class="row">
-            <div class="col-6"> hola</div>
-            <div class="col-6"> hola 2</div>
+        <div class="btn-banner">
+          <a href="/CRUD/destinos.html">Conoce nuestros destinos</a>
         </div>
-
-    </body>
+      </div>
+      <div class="imagen-banner">
+        <img src="banner.png" alt="banner" />
+      </div>
+    </section>
+    <section class="destinos">
+      <div class="btn-group">
+        <button type="button" class="btn btn-ida-regreso">Ida y Regreso</button>
+        <button type="button" class="btn btn-ida">Solo Ida</button>
+      </div>
+      <select name="selectores">
+        <option value="Origen">
+          <p>Selecciona</p>
+        </option>
+        <option value="" selected>
+          Value 2
+          <p>Selecciona</p>
+        </option>
+        <option value="value3">
+          Value 3
+          <p>Selecciona</p>
+        </option>
+        <option value="value4">
+          Value 4
+          <p>Selecciona</p>
+        </option>
+      </select>
+      <div class="btn-destinos">
+        <a href="#" src="buscar.png">Buscar</a>
+      </div>
+    </section>
+    <section class="destinos-mes">
+      <h2>destinos del mes</h2>
+      <div class="ofertas">
+        <div class="oferta1">
+          <img src="oferta1.png" alt="imagen oferta" />
+        </div>
+        <div class="oferta2">
+          <img src="oferta2.png" alt="imagen oferta" />
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="titulo-footer">
+        <h1>soporte</h1>
+        <ul class="texto">
+          <a href="">
+            <li>Centro de Ayuda</li>
+          </a>
+          <a href="">
+            <li>Contáctanos</li>
+          </a>
+          <a href="">
+            <li>FAQ</li>
+          </a>
+        </ul>
+        <a href="">
+          <img src="logo.png" alt="logo" />
+        </a>
+      </div>
+      <ul class="contacto">
+        <a href="">
+          <img class="contacto-twitter" src="twitter.png" />
+        </a>
+        <a href="">
+          <img class="contacto-instagram" src="instagram.png" />
+        </a>
+        <a href="">
+          <img class="contacto-facebook" src="facebook.png" />
+        </a>
+      </ul>
+    </footer>
+  </body>
 </html>

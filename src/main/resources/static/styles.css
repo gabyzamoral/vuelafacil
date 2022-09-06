@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+/* Variables globalas para los colores */
+:root {
+  --primario: #0353cc;
+  --primario2: #646566;
+  --secundario: #3a3d3f;
+  --blanco: #f8f8f8;
+  --negro: #121212;
+}
+
+/* regla generenal para dejar la pagina sin estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Tamaño de la funte*/
+html {
+  font-size: 62.25%;
+}
+/*Fuente para toda la pagina*/
+body {
+  font-family: "Monserrat", sans-serif;
+  font-size: 1.6rem;
+}
+/*Regla para todo los titulos*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 3.4rem;
+  text-align: center;
+  font-weight: 700;
+}
+/*Regla para los botones del navbar*/
+a {
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+/*--------------------Vista movil para el Home-------------------------*/
+/* Navegacion dispositivos moviles*/
+header {
+  display: flex;
+  position: fixed; /**Para dejar fija la barra de navegacion  mientras navego en la pagina **/
+  background-color: var(--primario);
+  top: 0;
+  width: 100%;
+  align-items: center;
+  /*justify-content: space-between;*/
+  text-align: center;
+  z-index: 2000;
+  padding: 0 1em;
+}
+.padre-navbar {
+  width: 100%;
+  height: auto;
+  padding-top: 1rem;
+  align-items: center;
+  justify-items: center;
+}
+.padre-navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.padre-navbar ul a {
+  background-color: var(--primario);
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.padre-navbar ul a.btn-sesion {
+  padding: 1rem 5rem;
+  margin: 1.8em auto;
+  border-radius: 1.8rem;
+  background-color: #bbc1c4;
+  font-weight: bold;
+}
+
+/*Referencia al logo*/
+.padre-navbar a:hover {
+  padding: 0.2rem;
+  border-radius: 0.4rem;
+  color: var(--primario);
+  background-color: var(--blanco);
+  font-weight: 400;
+}
+/*Aqui comienza la seccion del bannner*/
+.banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  align-items: center;
+  padding: 10rem;
+  /*justify-content: center;*/
+}
+.logo-banner {
+  width: 100%;
+}
+.logo-banner .imagen-banner {
+  justify-content: center;
+}
+.logo-banner p {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--secundario);
+  line-height: 5rem;
+}
+.logo-banner h1 {
+  color: var(--primario2);
+  text-align: left;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 5rem;
+}
+.imagen-banner img {
+  width: 100%;
+}
+.banner .btn-banner a {
+  color: var(--blanco);
+  padding: 2rem 5rem;
+  margin: 1.8em auto;
+  border-radius: 3.5rem;
+  background-color: var(--primario);
+  font-weight: bold;
+}
+.destinos {
+  background-color: #e0e0e2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 50vh;
+}
+
+/*-------- seccion de seleccion de vuelvos---------*/
+
+.destinos-mes {
+  background-color: #bbc1c4;
+  height: 80vh;
+  width: 100%;
+}
+.ofertas {
+  display: grid;
+  margin: 5rem 10rem;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.destinos-mes h2 {
+  font-size: 5rem;
+  padding-top: 5rem;
+  color: #3a3d3f;
+  text-transform: uppercase;
+  text-shadow: 1px 2px rgb(252, 248, 10);
+}
+.oferta1 img {
+  border-radius: 1.6rem;
+}
+.oferta2 img {
+  border-radius: 1.6rem;
+}
+/*---------- Footer ----------*/
+footer {
+  display: grid;
+  height: 70vh;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 5rem;
+}
+.titulo-footer h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: var(--primario2);
+  text-align: left;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  font-weight: bold;
+}
+.titulo-footer img {
+  margin-top: 1rem;
+}
+.titulo-footer ul a {
+  color: var(--negro);
+}
+
+.titulo-footer .texto li {
+  list-style: none;
+  line-height: 4rem;
+}
+footer ul img {
+  margin: 15rem 5rem;
+}

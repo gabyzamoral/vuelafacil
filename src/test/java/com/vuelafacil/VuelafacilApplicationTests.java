@@ -26,7 +26,7 @@ class VuelafacilApplicationTests {
     }
     
     @Test
-    @Disabled
+    
     void probarSiEncuentraBucaramangaEnCiudad(){
         List<Ciudad> listado = servicio.consultarCiudad("Bucaramanga");
         Assertions.assertTrue(listado.size() > 0, "Error, no se encontró ciudad con la palabra Bucaramanga");
@@ -34,7 +34,7 @@ class VuelafacilApplicationTests {
     
     
     @Test
-   
+    @Disabled
     
     void probrarSiEncuentroCategoriaConId1(){
         Ciudad encontrado = servicio.consultarCiudad(1);

@@ -41,7 +41,8 @@ public class CiudadServicio {
     
 
     
-    public Ciudad actualizarCiudad(Ciudad c){
+    public Ciudad actualizarCiudad(int Identificador ){
+        Ciudad c = repo.findById(Identificador).get();
         Ciudad ciu = repo.save(c);
         return ciu;
     }

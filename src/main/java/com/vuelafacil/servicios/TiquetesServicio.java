@@ -5,7 +5,7 @@
 package com.vuelafacil.servicios;
 
 import com.vuelafacil.entidades.Tiquetes;
-import com.vuelafacil.respositorios.ITiquetesrepository;
+import com.vuelafacil.repositorios.ITiquetesrepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

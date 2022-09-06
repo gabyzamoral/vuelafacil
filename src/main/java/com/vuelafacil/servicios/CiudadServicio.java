@@ -5,7 +5,7 @@
 package com.vuelafacil.servicios;
 
 import com.vuelafacil.entidades.Ciudad;
-import com.vuelafacil.respositorios.ICiudadrepository;
+import com.vuelafacil.repositorios.ICiudadrepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class CiudadServicio {
         return lista;
     }
     public Ciudad consultarCiudad(int Identificador){
-        Ciudad c = repo.findById(Identificador).get();
+        Ciudad c = repo.findById(Identificador).orElse(null);
         return c;
     }
     

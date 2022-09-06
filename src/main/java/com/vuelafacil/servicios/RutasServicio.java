@@ -4,7 +4,7 @@
  */
 package com.vuelafacil.servicios;
 import com.vuelafacil.entidades.Rutas;
-import com.vuelafacil.respositorios.IRutasrepository;
+import com.vuelafacil.repositorios.IRutasrepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

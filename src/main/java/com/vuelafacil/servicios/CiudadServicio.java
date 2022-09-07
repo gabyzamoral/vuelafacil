@@ -39,11 +39,6 @@ public class CiudadServicio {
         return c;
     }
     
-    public Ciudad actualizarCiudad(Ciudad c){
-        Ciudad ciu = repo.save(c);
-        return ciu;
-    }
-    
     public Ciudad inhabilitarCiudad(int Identificador,boolean EstadoAeropuerto){
 
         Ciudad c = repo.findById(Identificador).get();

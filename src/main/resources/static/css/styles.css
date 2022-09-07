@@ -5,6 +5,7 @@
   --primario: #0353cc;
   --primario2: #646566;
   --secundario: #3a3d3f;
+  --secundario2: #e4e6e7;
   --blanco: #f8f8f8;
   --negro: #121212;
 }
@@ -129,11 +130,48 @@ header {
   background-color: var(--primario);
   font-weight: bold;
 }
+/*---------------------- Opcion de vuelos ---------------*/
 .destinos {
-  background-color: #e0e0e2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 50vh;
+  background-color: #bdc9e2;
+}
+.destinos form {
+  display: flex;
+  width: 100%;
+  padding: 1.5rem 5rem;
+}
+.botones button {
+  margin: 2rem 5rem;
+  width: 30rem;
+  font-size: 2.5rem;
+  border-radius: 1.5rem;
+  gap: 2rem;
+}
+.botones #ida-regreso {
+  background-color: var(--primario);
+}
+.detalles {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.detalles .grupo {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secundario2);
+}
+.grupo {
+  width: 25rem;
+  height: 15vh;
+  border: solid 1px gray;
+}
+.grupo option {
+  border: none;
+  color: #666564;
+}
+.grupo label {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 6rem;
 }
 
 /*-------- seccion de seleccion de vuelvos---------*/

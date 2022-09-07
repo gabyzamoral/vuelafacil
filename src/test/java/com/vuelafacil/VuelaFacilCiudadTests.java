@@ -79,7 +79,7 @@ class VuelaFacilCiudadTests {
     }
 
     @Test
-    @Disabled // no se probó 
+    @Disabled 
     
     void probrarSiNoEncuentroCiudadConId(){
         Ciudad encontrado = servicios.consultarCiudad(1000000);
@@ -87,7 +87,7 @@ class VuelaFacilCiudadTests {
     }
     
     @Test
-    @Disabled // no se probó         
+    @Disabled         
     void probarSiActualizoUnaCiudad(){
         Ciudad encontrado = servicios.consultarCiudad(9);
         boolean valorInicial = encontrado.getEstadoAeropuerto();

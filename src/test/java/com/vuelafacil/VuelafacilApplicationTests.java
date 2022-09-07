@@ -43,13 +43,14 @@ class VuelafacilApplicationTests {
         Assertions.assertNotNull(encontrado, "Error, no se encontró pasajero con id 1 ");
     }
     
+    // ESpacio para deshabilitar ciudad 
+    
     @Test
     @Disabled
-    void probrarSiSeActualizanCiudades(){
-        Ciudad actualizada = servicios.actualizarCiudad(1);
+    void probrarSiSeInhabilitaCiudad(){
+        Ciudad guardado = servicios.inhabilitarCiudad(1, true);
+        Assertions.assertTrue(guardado.getEstadoAeropuerto() == true, " Error al inhabilitar la categoria");
     }
-    
-    // ESpacio para deshabilitar ciudad 
     
     // Fin de pruebas Ciudad
     

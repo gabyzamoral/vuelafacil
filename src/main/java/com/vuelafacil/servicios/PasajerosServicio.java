@@ -42,5 +42,9 @@ public class PasajerosServicio {
         Pasajeros pas = repo.save(c);
         return pas;
     }
+     
+     public void eliminarPasajero(Pasajeros c){
+         repo.deleteById(c.getPasaid());
+     }
     
 }

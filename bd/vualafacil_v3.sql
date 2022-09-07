@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-08-2022 a las 15:14:22
+-- Tiempo de generación: 07-09-2022 a las 15:13:14
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -116,7 +116,7 @@ CREATE TABLE `usuario` (
   `usuadireccion` varchar(60) DEFAULT NULL COMMENT 'Dirección del usuario',
   `usuatelefono` varchar(20) DEFAULT NULL COMMENT 'Teléfono del usuario',
   `usuausuario` varchar(20) NOT NULL COMMENT 'Usuario de ingreso al sistema',
-  `usuacontrasena` int(20) NOT NULL COMMENT 'Contraseña del usuario',
+  `usuacontrasena` int(200) NOT NULL COMMENT 'Contraseña del usuario',
   `usuatipousuario` int(1) NOT NULL COMMENT 'Tipo de usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -189,6 +189,12 @@ ALTER TABLE `vuelo`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `ciudad`
+--
+ALTER TABLE `ciudad`
+  MODIFY `ciudid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla ciudad';
 
 --
 -- AUTO_INCREMENT de la tabla `pasajero`

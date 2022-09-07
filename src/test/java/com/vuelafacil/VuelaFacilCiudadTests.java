@@ -28,16 +28,16 @@ class VuelaFacilCiudadTests {
     }
     
     @Test 
-    @Disabled //No se probó         
+    @Disabled //Se probó y falla, ya que, el id es diferente         
     void probarSiNoSeCreUnaCiudadRepetida(){
-        Ciudad c = new Ciudad ("Bucaramanga", "PaloNegro", "BUC", true);
+        Ciudad c = new Ciudad ("Bucaramanga", "PaloNegro", "BUC", false);
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> {
             servicios.crearNuevaCiudad(c);
         }, "Se esperaba error de violacion de integridad");
     }
     
     @Test
-    @Disabled //No se probó          
+    @Disabled          
     void probarSiNoSeCreUnaCiudadNoValida(){
         Ciudad c = new Ciudad (null, "PaloNegro", null, true);
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> {
@@ -48,7 +48,7 @@ class VuelaFacilCiudadTests {
     // Pruebas de busqueda
     
     @Test
-    @Disabled // no se probó 
+    @Disabled
     void probarSiEncuentraCiudad(){
         List<Ciudad> listado = servicios.consultarCiudad();
         Assertions.assertTrue(listado.size() > 0, "No se encontraron ciudades");
@@ -63,7 +63,7 @@ class VuelaFacilCiudadTests {
     }
     
     @Test
-    @Disabled // no se probó
+    @Disabled
     void probarSiNoEncuentraBogotaEnCiudad(){
         List<Ciudad> listado = servicios.consultarCiudad("Bogota");
         Assertions.assertTrue(listado.isEmpty(), "Se encontró ciudad Bogotá que no existe");
@@ -73,7 +73,7 @@ class VuelaFacilCiudadTests {
     @Test
     @Disabled
     
-    void probrarSiEncuentroCategoriaConId1(){
+    void probrarSiEncuentroCiudadConId(){
         Ciudad encontrado = servicios.consultarCiudad(1);
         Assertions.assertNotNull(encontrado, "No se encontró pasajero con id 1 ");
     }
@@ -81,28 +81,38 @@ class VuelaFacilCiudadTests {
     @Test
     @Disabled // no se probó 
     
-    void probrarSiNoEncuentroCategoriaConId1(){
+    void probrarSiNoEncuentroCiudadConId(){
         Ciudad encontrado = servicios.consultarCiudad(1000000);
-        Assertions.assertNotNull(encontrado, "Se econtró Ciudad con id 1000000 que no existe ");
+        Assertions.assertNull(encontrado, "Se econtró Ciudad con id 1000000 que no existe ");
     }
     
     @Test
     @Disabled // no se probó         
     void probarSiActualizoUnaCiudad(){
-        Ciudad encontrado = servicios.consultarCiudad(1);
+        Ciudad encontrado = servicios.consultarCiudad(9);
         boolean valorInicial = encontrado.getEstadoAeropuerto();
         encontrado.setEstadoAeropuerto(!valorInicial);
         servicios.actualizarCiudad(encontrado);
-        Ciudad actualizado = servicios.consultarCiudad(1);
-        Assertions.assertEquals(actualizado, !valorInicial, "No se actualizó la ciudad 1" );
+        Ciudad actualizado = servicios.consultarCiudad(9);
+        Assertions.assertEquals(actualizado.getEstadoAeropuerto(), !valorInicial, "No se actualizó la ciudad 1" );
     }
+    
+    @Test
+    @Disabled
+    void probarSiNoActualizoUnaCiudadExistenteConDataInvalida() {
+        Ciudad encontrado = servicios.consultarCiudad(2);
+        encontrado.setNombreCiudad(null);
+        Assertions.assertThrows(DataIntegrityViolationException.class, () -> {
+            servicios.actualizarCiudad(encontrado);
+        }, "Se esperaba error de violación de integridad");
+    }   
     
     // ESpacio para deshabilitar ciudad 
     
     @Test
-    @Disabled
+    @Disabled // no estoy seguro si se inhabilita la ciudad
     void probrarSiSeInhabilitaCiudad(){
-        Ciudad guardado = servicios.inhabilitarCiudad(1, true);
+        Ciudad guardado = servicios.inhabilitarCiudad(2, true);
         Assertions.assertTrue(guardado.getEstadoAeropuerto() == true, " Error al inhabilitar la categoria");
     }
     
@@ -110,7 +120,7 @@ class VuelaFacilCiudadTests {
     
 
     
-    // Inicio pruebas Rutas
+
     
     
     

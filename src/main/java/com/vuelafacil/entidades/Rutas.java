@@ -8,6 +8,8 @@ package com.vuelafacil.entidades;
  *
  * @author mariojurado
  */
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,13 +40,13 @@ public class Rutas {
 
 
 
-    @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date horaSalida;
+    @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP")
+    private LocalDateTime horaSalida;
 
-    @Column(name = "rutafechahorallegada", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date horaLlegada;
+    @Column(name = "rutafechahorallegada", columnDefinition="TIMESTAMP")
+    private LocalDateTime horaLlegada;
 
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, Date horaSalida, Date horaLlegada){
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -55,7 +57,7 @@ public class Rutas {
 
     }
  
-    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, Date horaSalida, Date horaLlegada){
+    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada){
         
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -90,11 +92,11 @@ public class Rutas {
 
 
 
-    public void setHoraSalida(Date horaSalida){
+    public void setHoraSalida(LocalDateTime horaSalida){
         this.horaSalida = horaSalida;
     }
 
-    public void setHoraLlegada(Date horaLlegada){
+    public void setHoraLlegada(LocalDateTime horaLlegada){
         this.horaLlegada = horaLlegada;
     }
 
@@ -121,11 +123,11 @@ public class Rutas {
 
 
 
-    public Date getHoraSalida(){
+    public LocalDateTime getHoraSalida(){
         return this.horaSalida;
     }
 
-    public Date getHoraLlegada(){
+    public LocalDateTime getHoraLlegada(){
         return this.horaLlegada;
     }
 

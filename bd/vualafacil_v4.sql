@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2022 a las 15:13:14
+-- Tiempo de generación: 08-09-2022 a las 14:30:49
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -96,7 +96,7 @@ CREATE TABLE `tiquete` (
   `usuaid` int(6) NOT NULL COMMENT 'Identificador del usuario que realiza el registro',
   `vuelid` int(6) NOT NULL COMMENT 'identificador del vuelo',
   `pasaid` int(6) NOT NULL COMMENT 'identificador del pasajero',
-  `tiquclasepreferencial` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Determina si es clase preferencial',
+  `tiquclasepreferencial` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'Determina si es clase preferencial',
   `tiqupuesto` int(2) NOT NULL COMMENT 'Puesto del avión',
   `tiqufechahoraregistro` datetime NOT NULL COMMENT 'Fecha hora en que se realiza el registro en el sistema'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -111,12 +111,12 @@ CREATE TABLE `usuario` (
   `usuaid` int(6) NOT NULL COMMENT 'Identificado de la tabla usuario',
   `tipdocid` int(4) NOT NULL COMMENT 'Identificador del tipo de documento',
   `usuanombre` varchar(50) NOT NULL COMMENT 'Nombre del usuario',
-  `usuaapellido` int(50) NOT NULL COMMENT 'Apellidos del usuario',
+  `usuaapellido` varchar(50) NOT NULL COMMENT 'Apellidos del usuario',
   `usuadocumento` varchar(50) NOT NULL COMMENT 'Documento del usuario',
   `usuadireccion` varchar(60) DEFAULT NULL COMMENT 'Dirección del usuario',
   `usuatelefono` varchar(20) DEFAULT NULL COMMENT 'Teléfono del usuario',
   `usuausuario` varchar(20) NOT NULL COMMENT 'Usuario de ingreso al sistema',
-  `usuacontrasena` int(200) NOT NULL COMMENT 'Contraseña del usuario',
+  `usuacontrasena` varchar(200) NOT NULL COMMENT 'Contraseña del usuario',
   `usuatipousuario` int(1) NOT NULL COMMENT 'Tipo de usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

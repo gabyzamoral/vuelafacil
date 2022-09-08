@@ -92,6 +92,7 @@ public class VuelaFacilPasajerosTests {
     }
     
     @Test
+    @Disabled        
     void probarSiNoActualizoUnPasajeroExistenteConDataInvalida() {
         Pasajeros encontrado = servicio.consultarPasajero(2);
         encontrado.setNombres(null);

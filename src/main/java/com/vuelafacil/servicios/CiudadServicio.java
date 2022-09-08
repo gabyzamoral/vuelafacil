@@ -35,7 +35,7 @@ public class CiudadServicio {
         return lista;
     }
     public Ciudad consultarCiudad(int Identificador){
-        Ciudad c = repo.findById(Identificador).get();
+        Ciudad c = repo.findById(Identificador).orElse(null);
         return c;
     }
     

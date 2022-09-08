@@ -34,7 +34,7 @@ public class PasajerosServicio {
     }
 
     public Pasajeros consultarPasajero(int Pasaid){
-        Pasajeros c = repo.findById(Pasaid).get();
+        Pasajeros c = repo.findById(Pasaid).orElse(null);
         return c;
     }    
     

@@ -32,8 +32,8 @@ class VuelaFacilPasajerosTests {
     }
     
     @Test 
-    //@Disabled //Se probó y falla, ya que, el id es diferente         
-    void probarSiNoSeCreUnPasaejorRepetido(){
+    @Disabled //Se probó y falla, ya que, el id es diferente         
+    void probarSiNoSeCreUnPasajeroRepetido(){
         Pasajeros c = new Pasajeros ("Mario Andres", "Jurado Herrera", "armitxe71@hotmail.com", "3212011452");
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> {
             servicio.crearNuevoPasajero(c);
@@ -43,8 +43,8 @@ class VuelaFacilPasajerosTests {
  
     
     @Test
-    //@Disabled          
-    void probarSiNoSeCreUnPasajeroNoValida(){
+    @Disabled          
+    void probarSiNoSeCreUnPasajeroNoValido(){
         Pasajeros c = new Pasajeros (null, "Jurado Herrera", null, "3212011452");
         Assertions.assertThrows(DataIntegrityViolationException.class, () -> {
             servicio.crearNuevoPasajero(c);

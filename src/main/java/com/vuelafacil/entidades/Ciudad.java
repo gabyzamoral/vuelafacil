@@ -93,8 +93,10 @@ public class Ciudad {
     public String getCodigoAeropuerto(){
        return this.codigoAeropuerto;
     }
-
-
+    
+    public boolean getEstadoAeropuerto(){
+        return this.estadoAeropuerto;
+    }
 
     
 }

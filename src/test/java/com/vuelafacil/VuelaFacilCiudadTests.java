@@ -106,7 +106,13 @@ class VuelaFacilCiudadTests {
         }, "Se esperaba error de violación de integridad");
     }   
     
-    // ESpacio para deshabilitar ciudad 
+    @Test
+    @Disabled // no estoy seguro si se inhabilita la ciudad
+    void probrarSiSeInhabilitaCiudad(){
+        Ciudad guardado = servicio.inhabilitarCiudad(2, true);
+        Assertions.assertTrue(guardado.getEstadoAeropuerto() == true, " Error al inhabilitar la categoria");
+    }    
+    
     
            
 }

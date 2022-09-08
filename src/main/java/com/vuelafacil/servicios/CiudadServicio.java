@@ -46,4 +46,12 @@ public class CiudadServicio {
         return ciu;
     }
     
+    public Ciudad inhabilitarCiudad(int Identificador,boolean EstadoAeropuerto){
+
+        Ciudad c = repo.findById(Identificador).get();
+        c.setEstadoAeropuerto(EstadoAeropuerto);
+        Ciudad result = repo.save(c);
+        return result;
+    }     
+    
 }

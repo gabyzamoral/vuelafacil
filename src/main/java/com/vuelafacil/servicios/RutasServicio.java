@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @author mariojurado
  */
 @Service
-public class RutasServicio {
+public class RutasServicio{
     @Autowired
     private IRutasrepository repo;
     
@@ -41,5 +41,13 @@ public class RutasServicio {
         Rutas rut = repo.save(c);
         return rut;
     }
+    
+    public Rutas inhabilitarRutas(int RutaId,boolean RutaHabilitado){
+
+        Rutas c = repo.findById(RutaId).get();
+        c.setRutaHabilitado(RutaHabilitado);
+        Rutas result = repo.save(c);
+        return result;
+    }       
     
 }

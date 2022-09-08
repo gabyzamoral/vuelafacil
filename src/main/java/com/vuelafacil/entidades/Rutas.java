@@ -38,6 +38,8 @@ public class Rutas {
     @Column(name = "rutaciudaddestino", nullable = false, length = 100)
     private String rutaciudaddestino;
 
+    @Column(name = "rutahabilitado", columnDefinition = "TINYINT", length = 1)
+    private boolean rutahabilitado;
 
 
     @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP")
@@ -46,7 +48,7 @@ public class Rutas {
     @Column(name = "rutafechahorallegada", columnDefinition="TIMESTAMP")
     private LocalDateTime horaLlegada;
 
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada){
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -57,7 +59,7 @@ public class Rutas {
 
     }
  
-    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada){
+    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
         
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -88,6 +90,10 @@ public class Rutas {
     
     public void setCodigoRuta(String codigoRuta){
         this.codigoRuta = codigoRuta;
+    }
+
+    public void setRutaHabilitado(boolean rutahabilitado) {
+        this.rutahabilitado = rutahabilitado;
     }
 
 
@@ -131,6 +137,11 @@ public class Rutas {
         return this.horaLlegada;
     }
 
+    public boolean isRutahabilitado() {
+        return rutahabilitado;
+    }
+
+    
 }
 
 

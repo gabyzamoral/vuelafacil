@@ -93,7 +93,7 @@ class VuelaFacilCiudadTests {
         encontrado.setEstadoAeropuerto(!valorInicial);
         servicio.actualizarCiudad(encontrado);
         Ciudad actualizado = servicio.consultarCiudad(9);
-        Assertions.assertEquals(actualizado.getEstadoAeropuerto(), !valorInicial, "No se actualizó la ciudad 1" );
+        Assertions.assertEquals(actualizado.getEstadoAeropuerto(), !valorInicial, "No se actualizó la ciudad 9" );
     }
     
     @Test

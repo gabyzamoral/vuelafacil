@@ -34,6 +34,14 @@ public class VuelaFacilRutasTest {
         Assertions.assertTrue(guardado.getRutaId() > 0 , "Error no se guardo el nuevo objeto");
         
     }
+
+    @Test
+    @Disabled 
+    
+    void probrarSiNoEncuentroCiudadConId(){
+        Rutas encontrado = servicio.consularltarRutas(1000000);
+        Assertions.assertNull(encontrado, "Se econtró Ciudad con id 1000000 que no existe ");
+    }
     
     // pruebas de busqueda
     @Test
@@ -64,5 +72,16 @@ public class VuelaFacilRutasTest {
         Rutas encontrado = servicio.consularltarRutas(1);
         Assertions.assertNotNull(encontrado, "No se encontró pasajero con id 1 ");
     }    
+
+    @Test
+    @Disabled         
+    void probarSiActualizoUnaRuta(){
+        Rutas encontrado = servicio.consularltarRutas(1);
+        boolean valorInicial = encontrado.isRutahabilitado();
+        encontrado.setRutaHabilitado(!valorInicial);
+        servicio.actualizarRutas(encontrado);
+        Rutas actualizado = servicio.consularltarRutas(1);
+        Assertions.assertEquals(actualizado.isRutahabilitado(), !valorInicial, "No se actualizó la ruta 1" );
+    }
     
 }

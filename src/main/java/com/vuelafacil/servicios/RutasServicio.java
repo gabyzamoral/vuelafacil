@@ -33,7 +33,7 @@ public class RutasServicio{
     }
     
     public Rutas consularltarRutas(int Rutaid){
-        Rutas c = repo.findById(Rutaid).get();
+        Rutas c = repo.findById(Rutaid).orElse(null);
         return c;
     }
  
@@ -48,6 +48,11 @@ public class RutasServicio{
         c.setRutaHabilitado(RutaHabilitado);
         Rutas result = repo.save(c);
         return result;
-    }       
+    }
+
+    public List<Rutas> consultarRuta(){
+        List<Rutas> lista = repo.findAll();
+        return lista;
+    }     
     
 }

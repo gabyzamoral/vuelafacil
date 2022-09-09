@@ -48,7 +48,10 @@ public class Rutas {
     @Column(name = "rutafechahorallegada", columnDefinition="TIMESTAMP")
     private LocalDateTime horaLlegada;
 
-    
+    public Rutas(){
+        
+    }
+            
     public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;

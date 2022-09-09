@@ -16,5 +16,16 @@ public class ControladorPrincipal
     public  String cargarPaginaPrincipal()
     {
         return "index";
-    }    
+    }
+
+    @GetMapping("/ciudad")
+    public String cargarListaCiudaddes(){
+        return "listaciudades";
+    }
+    
+    @GetMapping("/ciudad/form")
+    public String cargarFormCiudades(){
+        return "formciudades";
+    }
+    
 }

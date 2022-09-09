@@ -3,7 +3,7 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -37,23 +37,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>Bucaramanga</td>
-                        <td>Palo negro</td>
-                        <td>BUC</td>
-                        <td>Habilitado</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">3</td>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
+                    <tr th:each="ciudad : ${ciudades}">
+                        <td scope="row" th:text="${ciudad.identificador}">...</td>
+                        <td th:text="${ciudad.nombreCiudad}">...</td>
+                        <td th:text="${ciudad.nombreAeropuerto}">...</td>
+                        <td th:text="${ciudad.codigoAeropuerto}">...</td>
+                        <td th:text="${ciudad.estadoAeropuerto}">...</td>
                     </tr>
                 </tbody>
             </table>

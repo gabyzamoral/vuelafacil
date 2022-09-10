@@ -3,13 +3,64 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> 
     </head>
     <body>
-        <div>Form Ciudades</div>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                    <span class="fs-4">Vuela facil</span>
+                </a>
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Inicio</a></li>
+                    <li class="nav-item"><a href="/ciudad" class="nav-link">Ciudades</a></li>
+                    <li class="nav-item"><a href="/ciudad/form" class="nav-link active">Nueva Ciudad</a></li>
+                </ul>
+            </header>
+
+            <h3>Formulario de ciudades</h3>
+            <form action="/ciudad"  th:object="${ciudad}" method="post">
+                <div>
+                    
+                    <input type="hidden" th:field="*{identificador}" id="identificador" name="identificador" readonly >
+                </div>
+                
+                <div>
+                    <label for="nombreCiudad">Nombre Ciudad:</label>
+                    <input type="text" th:field="*{nombreCiudad}"  id="nombreCiudad" name="nombreCiudad" maxlength ="100" required >
+                </div> 
+                
+                <div>
+                     <label for="nombreAeropuerto">Nombre Aeropuerto:</label>
+                     <input type="text" th:field="*{nombreAeropuerto}"  id="nombreAeropuerto" name="nombreAeropuerto" maxlength ="100" required>    
+                </div>
+                
+                <div>
+                     <label for="codigoAeropuerto">Codigo Aeropuerto:</label>
+                     <input type="text" th:field="*{codigoAeropuerto}"  id="codigoAeropuerto" name="codigoAeropuerto" maxlength ="4" required>    
+                </div>
+                
+                <div>
+                    <label for="estadoAeropuerto">Estado Aeropuerto:</label>
+                    <input type="checkbox" th:field="*{estadoAeropuerto}"  id="estadoAeropuerto" name="estadoAeropuerto">
+                </div>
+                
+                <div>
+                    <input type="submit" value="Guardar">
+                    <button>Cancelar</button>
+                </div>    
+                
+                
+            </form>
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>        
     </body>
 </html>

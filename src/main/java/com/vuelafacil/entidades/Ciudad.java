@@ -35,6 +35,7 @@ public class Ciudad {
     private boolean estadoAeropuerto;
     
     
+    
     public Ciudad(){
         
     }
@@ -74,7 +75,7 @@ public class Ciudad {
     public void setEstadoAeropuerto(boolean estadoAeropuerto){
         this.estadoAeropuerto = estadoAeropuerto;
     }
-    
+  
     // métodos get
     
     public int getIdentificador(){

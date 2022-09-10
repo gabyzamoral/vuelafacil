@@ -40,6 +40,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <th scope="col">NombreAeropuerto</th>
                         <th scope="col">CodigoAeropuerto</th>
                         <th scope="col">EstadoAeropuerto</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,10 +49,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${ciudad.nombreCiudad}">...</td>
                         <td th:text="${ciudad.nombreAeropuerto}">...</td>
                         <td th:text="${ciudad.codigoAeropuerto}">...</td>
-                        <td th:text="${ciudad.estadoAeropuerto}">...</td>
+                        <td th:if="${ciudad.estadoAeropuerto}" th:text="Disponible">...</td>
+                        <td th:if="${not ciudad.estadoAeropuerto}" th:text="'No disponible'">...</td>
+                        
+                        <td><a th:href ="${'/ciudad/form/' + ciudad.identificador}">Editar</a></td>
                     </tr>
                     <tr th:unless="${not #lists.isEmpty(ciudades)}">
-                        <td colspan="5">No se encontraron registros</td>
+                        <td colspan="6">No se encontraron registros</td>
                     </tr>
                 </tbody>
             </table>

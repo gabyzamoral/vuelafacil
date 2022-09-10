@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 09-09-2022 a las 04:02:35
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-09-2022 a las 15:29:29
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.0.19
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `vuelafacil`
+-- Base de datos: `vualafacil`
 --
 
 -- --------------------------------------------------------
@@ -28,20 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ciudad` (
-  `ciudid` int(6) NOT NULL,
+  `ciudid` int(6) NOT NULL COMMENT 'Identificador de la tabla ciudad',
   `ciudnombre` varchar(80) NOT NULL COMMENT 'Nombre de la ciudad',
   `ciudnombreaeropuerto` varchar(100) NOT NULL COMMENT 'Nombre del aeropuerto de la ciudad',
   `ciudcodigoaeropuerto` varchar(3) NOT NULL COMMENT 'Código identificador del aeropuerto',
   `ciudhabilitado` tinyint(4) NOT NULL COMMENT 'Ciudad habilitada'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ciudad`
---
-
-INSERT INTO `ciudad` (`ciudid`, `ciudnombre`, `ciudnombreaeropuerto`, `ciudcodigoaeropuerto`, `ciudhabilitado`) VALUES
-(2, 'Bucaramanga', 'PaloNegro', 'BUC', 1),
-(9, 'Bucaramanga', 'PaloNegro', 'BUC', 1);
 
 -- --------------------------------------------------------
 
@@ -57,17 +49,6 @@ CREATE TABLE `pasajero` (
   `pasacelular` varchar(20) NOT NULL COMMENT 'Celular del pasajero'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `pasajero`
---
-
-INSERT INTO `pasajero` (`pasaid`, `pasanombre`, `pasaapellido`, `pasacorreoelectronico`, `pasacelular`) VALUES
-(2, 'Mario Andres', 'Jurado Herrera', 'armitxe71@hotmail.com', '3212011452'),
-(4, 'Mario Andres', 'Jurado Herrera', 'armitxe71@hotmail.com', '3212011452'),
-(5, 'Mario Andres', 'Jurado Herrera', 'armitxe71@hotmail.com', '3212011452'),
-(6, 'Mario Andres', 'Jurado Herrera', 'armitxe71@hotmail.com', '3212011452'),
-(7, 'Mario Andres', 'Jurado Herrera', 'armitxe71@hotmail.com', '3212011452');
-
 -- --------------------------------------------------------
 
 --
@@ -76,21 +57,14 @@ INSERT INTO `pasajero` (`pasaid`, `pasanombre`, `pasaapellido`, `pasacorreoelect
 
 CREATE TABLE `ruta` (
   `rutaid` int(6) NOT NULL COMMENT 'Identificador de la tabla ruta',
+  `ciudidorigen` int(6) NOT NULL COMMENT 'Identificador de la ciudad de origen',
+  `ciudiddestino` int(6) NOT NULL COMMENT 'Identificador de la ciudad de destino',
   `rutacodigo` varchar(10) NOT NULL COMMENT 'Código único de la ruta',
   `rutanombre` varchar(80) NOT NULL COMMENT 'Nombre de la ruta',
-  `rutaciudadorigen` varchar(100) NOT NULL COMMENT 'Ciudad y aeropuerto de origen de la ruta',
-  `rutaciudaddestino` varchar(100) NOT NULL COMMENT 'Ciudad y aeropuerto de destino de la ruta',
   `rutafechahorasalida` datetime NOT NULL COMMENT 'Fecha hora de salida de la ruta',
   `rutafechahorallegada` datetime NOT NULL COMMENT 'Fecha hora de llegada de la ruta',
-  `rutahabilitado` tinyint(4) NOT NULL
+  `rutahabilitado` tinyint(4) NOT NULL COMMENT 'Determina si la ruta se encuentra habilitada'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `ruta`
---
-
-INSERT INTO `ruta` (`rutaid`, `rutacodigo`, `rutanombre`, `rutaciudadorigen`, `rutaciudaddestino`, `rutafechahorasalida`, `rutafechahorallegada`, `rutahabilitado`) VALUES
-(1, 'codruta', 'nameruta', 'Bucaramanga', ' Bogota', '2022-10-25 09:10:00', '2020-10-31 09:10:00', 0);
 
 -- --------------------------------------------------------
 
@@ -120,6 +94,7 @@ INSERT INTO `tipodocumento` (`tipdocid`, `tipdocsigla`, `tipdocnombre`) VALUES
 
 CREATE TABLE `tiquete` (
   `tiquid` int(6) NOT NULL COMMENT 'Identificador del tiquete',
+  `usuaid` int(6) NOT NULL COMMENT 'Identificador del usuario que realiza el registro',
   `vuelid` int(6) NOT NULL COMMENT 'identificador del vuelo',
   `pasaid` int(6) NOT NULL COMMENT 'identificador del pasajero',
   `tiquclasepreferencial` tinyint(4) NOT NULL DEFAULT 0 COMMENT 'Determina si es clase preferencial',
@@ -142,7 +117,7 @@ CREATE TABLE `usuario` (
   `usuadireccion` varchar(60) DEFAULT NULL COMMENT 'Dirección del usuario',
   `usuatelefono` varchar(20) DEFAULT NULL COMMENT 'Teléfono del usuario',
   `usuausuario` varchar(20) NOT NULL COMMENT 'Usuario de ingreso al sistema',
-  `usuacontrasena` varchar(20) NOT NULL COMMENT 'Contraseña del usuario',
+  `usuacontrasena` varchar(200) NOT NULL COMMENT 'Contraseña del usuario',
   `usuatipousuario` int(1) NOT NULL COMMENT 'Tipo de usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -194,15 +169,16 @@ ALTER TABLE `tipodocumento`
 --
 ALTER TABLE `tiquete`
   ADD PRIMARY KEY (`tiquid`),
+  ADD KEY `fk_tiqupasa` (`pasaid`),
   ADD KEY `fk_tiquvuel` (`vuelid`),
-  ADD KEY `fk_tiqupasa` (`pasaid`);
+  ADD KEY `fk_tiquusua` (`usuaid`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`usuaid`),
-  ADD KEY `fk_tipdocusua` (`tipdocid`);
+  ADD KEY `fk_usuatipdoc` (`tipdocid`);
 
 --
 -- Indices de la tabla `vuelo`
@@ -219,19 +195,19 @@ ALTER TABLE `vuelo`
 -- AUTO_INCREMENT de la tabla `ciudad`
 --
 ALTER TABLE `ciudad`
-  MODIFY `ciudid` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ciudid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla ciudad';
 
 --
 -- AUTO_INCREMENT de la tabla `pasajero`
 --
 ALTER TABLE `pasajero`
-  MODIFY `pasaid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla pasajero', AUTO_INCREMENT=8;
+  MODIFY `pasaid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla pasajero';
 
 --
 -- AUTO_INCREMENT de la tabla `ruta`
 --
 ALTER TABLE `ruta`
-  MODIFY `rutaid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla ruta', AUTO_INCREMENT=2;
+  MODIFY `rutaid` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Identificador de la tabla ruta';
 
 --
 -- AUTO_INCREMENT de la tabla `tipodocumento`
@@ -262,17 +238,25 @@ ALTER TABLE `vuelo`
 --
 
 --
+-- Filtros para la tabla `ruta`
+--
+ALTER TABLE `ruta`
+  ADD CONSTRAINT `fk_rutaciuddestino` FOREIGN KEY (`rutaid`) REFERENCES `ciudad` (`ciudid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_rutaciudorigen` FOREIGN KEY (`rutaid`) REFERENCES `ciudad` (`ciudid`) ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `tiquete`
 --
 ALTER TABLE `tiquete`
-  ADD CONSTRAINT `fk_tiqupasa` FOREIGN KEY (`pasaid`) REFERENCES `pasajero` (`pasaid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_tiquvuel` FOREIGN KEY (`vuelid`) REFERENCES `vuelo` (`vuelid`);
+  ADD CONSTRAINT `fk_tiqupasa` FOREIGN KEY (`pasaid`) REFERENCES `pasajero` (`pasaid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tiquusua` FOREIGN KEY (`usuaid`) REFERENCES `usuario` (`usuaid`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tiquvuel` FOREIGN KEY (`vuelid`) REFERENCES `vuelo` (`vuelid`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `fk_tipdocusua` FOREIGN KEY (`tipdocid`) REFERENCES `tipodocumento` (`tipdocid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_usuatipdoc` FOREIGN KEY (`tipdocid`) REFERENCES `tipodocumento` (`tipdocid`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vuelo`

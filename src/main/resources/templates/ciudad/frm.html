@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración de vuela facil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" >   
+    <link href="/css/admin.css" rel="stylesheet" >
+    <link rel="shortcut icon" href="/imagenes/logo.png" type="image/png"/>
+</head>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <a href="/dashboard">
+                    <img src="/imagenes/logo.png" alt="logo" class="img-fluid" style="max-height: 50%;">
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-9">
+                <h1>Administración del sistema vuela facil</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body >
+    <div class="container" >
+
+        <ul class="nav mb-3">
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Inicio</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ciudad">ciudads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ciudad">Ciudad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ruta">Rutas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/vuelo">Vuelos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pasajero">Pasajeros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tikete">Tikete</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/salir">Salir</a>
+            </li>          
+        </ul>    
+ 
+        <div class="row mt-2">
+            <div class="col-12">
+                
+                <form action="/ciudad"  th:object="${ciudad}" method="post">
+                    <input type="hidden" th:field="*{identificador}" id="identificador" name="identificador" readonly >
+                    <h2> Regristra o actualizar ciudad</h2>
+                    <div class="row mt-5">
+    
+                        <div class="col-12 col-sm-4 col-md-4">
+                            <label for="nombreCiudad" class="form-label">Nombre de la ciudad</label>
+                            <input type="text" class="form-control" th:field="*{nombreCiudad}"  id="nombreCiudad" name="nombreCiudad" maxlength ="80" required>
+                        </div>
+    
+                        <div class="col-12 col-sm-4 col-md-4">
+                            <label for="nombreAeropuerto" class="form-label">Nombre aeropuerto</label>
+                            <input type="text" class="form-control" th:field="*{nombreAeropuerto}"  id="nombreAeropuerto" name="nombreAeropuerto" maxlength ="100" required>
+                        </div>
+    
+                        <div class="col-12 col-sm-4 col-md-4">
+                            <label for="codigoAeropuerto" class="form-label">Código aeropuerto</label>
+                            <input type="text" class="form-control"th:field="*{codigoAeropuerto}"  id="codigoAeropuerto" name="codigoAeropuerto" maxlength ="3" required>
+                        </div>              
+    
+                        <div class="col-12 col-sm-4 col-md-4 mt-3">
+                            <label for="direccion" class="form-label">Estado</label>
+                            <input type="checkbox" th:field="*{estadoAeropuerto}"  id="estadoAeropuerto" name="estadoAeropuerto">
+                        </div>   
+                        
+                    </div>
+    
+                    <div class="row mt-5">
+
+                        <div class="col-2 ">
+                            <a href="/ciudad" class="btn btn-danger" style="font-size: 1m;">Gestionar ciudad</a> 
+                        </div>
+
+                        <div class="col-10 text-end">
+                            <input type="submit" class="btn btn-success" value="Guardar">
+                        </div>
+                    </div> 
+                </form>  
+            </div>        
+        </div>
+    </div>    
+</body>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3>Grupo 1</h3>
+                </div>
+    
+                <div class="col-12 col-sm-6">
+                    <span> Integrantes</span>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>

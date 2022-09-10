@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author mariojurado
  */
+@Repository
 public interface IUsuariorepository extends JpaRepository<Usuarios, Integer> {
-    public List<Usuarios> findByNombreUsuarioContaining(String criterio);
+    public List<Usuarios> findByNombreContaining(String criterio);
 }

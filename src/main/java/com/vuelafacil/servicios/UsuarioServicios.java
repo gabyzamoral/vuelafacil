@@ -17,7 +17,7 @@ public class UsuarioServicios {
     @Autowired
     private IUsuariorepository repo;
     
-    public Usuarios crearNuevoUsuario(Usuarios c){
+    public Usuarios crearUsuario(Usuarios c){
         Usuarios  usu =repo.save(c);
         return usu;
     }
@@ -28,16 +28,16 @@ public class UsuarioServicios {
     }     
     
    public List<Usuarios> consultarUsuarios(String criterio){
-        List<Usuarios> lista = repo.findByNombreUsuarioContaining(criterio);
+        List<Usuarios> lista = repo.findByNombreContaining(criterio);
         return lista;    
     }
    
-    public Usuarios consultarUsuarios(int Usuaid){
+    public Usuarios consultarUsuario(int Usuaid){
         Usuarios c = repo.findById(Usuaid).get();
         return c;
     }  
     
-    public Usuarios actualizarCiudad(Usuarios c){
+    public Usuarios actualizarUsuario(Usuarios c){
         Usuarios usu = repo.save(c);
         return usu;
     }

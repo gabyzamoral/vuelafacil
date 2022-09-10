@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.vuelafacil.entidades;
 
 import javax.persistence.Column;
@@ -20,136 +16,127 @@ public class Usuarios {
     @Id
     @Column(name = "usuaid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int usuaid;
+    private int identificador;
     
-    @Column(name = "usuanombre", nullable = false, length = 100)
-    private String nombreUsuario;
+    @Column(name = "usuanombre", nullable = false, length = 50)
+    private String nombre;
     
-    @Column(name = "usuaapellido", nullable = false, length = 100)
-    private String usuaapellido;
+    @Column(name = "usuaapellido", nullable = false, length = 50)
+    private String apellido;
     
-    @Column(name = "usuadocumento", nullable = false, length = 100)
-    private String usuadocumento;
+    @Column(name = "usuadocumento", nullable = false, length = 20)
+    private String documento;
     
-    @Column(name = "usuadireccion", nullable = false, length = 100)
-    private String usuadireccion;
+    @Column(name = "usuadireccion", nullable = false, length = 60)
+    private String direccion;
     
-    @Column(name = "usuatelefono", nullable = false, length = 100)
-    private String usuatelefono;
+    @Column(name = "usuatelefono", nullable = false, length = 20)
+    private String telefono;
     
-    @Column(name = "usuausuario", nullable = false, length = 100)   
-    private String usuausuario;
+    @Column(name = "usuausuario", nullable = false, length = 20)   
+    private String nickUsuario;
     
-    @Column(name = "usuacontrasena", nullable = false, length = 100)   
-    private String usuacontrasena;
+    @Column(name = "usuacontrasena", nullable = false, length = 200)   
+    private String password;
     
-    @Column(name = "usuatipousuario", nullable = false, length = 100)   
-    private int usuatipousuario;
+    @Column(name = "usuatipousuario", nullable = false, length = 2)   
+    private int tipoUsuario;
 
     public Usuarios() {
     }
 
-
-    public Usuarios(int usuaid, String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontrasena, int usuatipousuario) {
-        this.usuaid = usuaid;
-        this.nombreUsuario = nombreUsuario;
-        this.usuaapellido = usuaapellido;
-        this.usuadocumento = usuadocumento;
-        this.usuadireccion = usuadireccion;
-        this.usuatelefono = usuatelefono;
-        this.usuausuario = usuausuario;
-        this.usuacontrasena = usuacontrasena;
-        this.usuatipousuario = usuatipousuario;
+    public Usuarios(int identificador, String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
+        this.identificador = identificador;
+        this.nombre      = nombre;
+        this.apellido    = apellido;
+        this.documento   = documento;
+        this.direccion   = direccion;
+        this.telefono    = telefono;
+        this.nickUsuario = nickUsuario;
+        this.password    = password;
+        this.tipoUsuario = tipoUsuario;
     }
 
-    public Usuarios(String nombreUsuario, String usuaapellido, String usuadocumento, String usuadireccion, String usuatelefono, String usuausuario, String usuacontrasena, int usuatipousuario) {
-        this.nombreUsuario = nombreUsuario;
-        this.usuaapellido = usuaapellido;
-        this.usuadocumento = usuadocumento;
-        this.usuadireccion = usuadireccion;
-        this.usuatelefono = usuatelefono;
-        this.usuausuario = usuausuario;
-        this.usuacontrasena = usuacontrasena;
-        this.usuatipousuario = usuatipousuario;
+    public Usuarios(String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
+        this.nombre      = nombre;
+        this.apellido    = apellido;
+        this.documento   = documento;
+        this.direccion   = direccion;
+        this.telefono    = telefono;
+        this.nickUsuario = nickUsuario;
+        this.password    = password;
+        this.tipoUsuario = tipoUsuario;
     }
 
-    public void setUsuaid(int usuaid) {
-        this.usuaid = usuaid;
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setUsuaApellido(String usuaapellido) {
-        this.usuaapellido = usuaapellido;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public void setUsuaDocumento(String usuadocumento) {
-        this.usuadocumento = usuadocumento;
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
-    public void setUsuaDireccion(String usuadireccion) {
-        this.usuadireccion = usuadireccion;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public void setUsuaTelefono(String usuatelefono) {
-        this.usuatelefono = usuatelefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public void setUsuausuario(String usuausuario) {
-        this.usuausuario = usuausuario;
+    public void setNickUsuario(String nickUsuario) {
+        this.nickUsuario = nickUsuario;
     }
 
-    public void setUsuaContrasena(String usuacontrasena) {
-        this.usuacontrasena = usuacontrasena;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setUsuaTipoUsuario(int usuatipousuario) {
-        this.usuatipousuario = usuatipousuario;
-    }
+    public void setTipoUsuario(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }    
     
-    
-    public int getUsuaid() {
-        return usuaid;
+    public int getIdentificador() {
+        return identificador;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getUsuaApellido() {
-        return usuaapellido;
+    public String getApellido() {
+        return apellido;
     }
 
-    public String getUsuaDocumento() {
-        return usuadocumento;
+    public String getDocumento() {
+        return documento;
     }
 
-    public String getUsuaDireccion() {
-        return usuadireccion;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public String getUsuaTelefono() {
-        return usuatelefono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public String getUsuaUsuario() {
-        return usuausuario;
+    public String getNickUsuario() {
+        return nickUsuario;
     }
 
-    public String getUsuaContrasena() {
-        return usuacontrasena;
+    public String getPassword() {
+        return password;
     }
 
-    public int getUsuaTipoUsuario() {
-        return usuatipousuario;
-    }
-    
-    
-    
-
-
-    
-        
+    public int getTipoUsuario() {
+        return tipoUsuario;
+    }         
 }

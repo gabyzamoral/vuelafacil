@@ -1,0 +1,36 @@
+/* Variables globalas para los colores */
+:root {
+    --primario: #0353cc;
+    --primario2: #646566;
+    --secundario: #3a3d3f;
+    --secundario2: #e4e6e7;
+    --blanco: #fdfdfd;
+    --negro: #121212;
+
+  
+  }
+
+  body{
+    background-color: #f8f9fa;
+    color: #868686;
+    font-weight: 400;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  header {   
+    background-color: var(--primario);
+    width: 100%;
+    max-height: 5em;
+    color: var(--blanco);
+    padding: 4px;
+  }
+
+  footer{
+    background-color: var(--secundario);
+    width: 100%;
+    color: var(--blanco);
+    position: absolute;
+    bottom: 0;
+  }

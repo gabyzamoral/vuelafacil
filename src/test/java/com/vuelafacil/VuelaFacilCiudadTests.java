@@ -20,7 +20,7 @@ class VuelaFacilCiudadTests {
     @Test
     @Disabled     
     void probarSiSeCreaUnaNuevaCiudad(){
-        Ciudad c = new Ciudad("Bucaramanga", "PaloNegro", "BUC", true);
+        Ciudad c = new Ciudad("Bogota", "El Dorado", "BOG", true);
         Ciudad guardado = servicio.crearNuevaCiudad(c);
         Assertions.assertTrue(guardado.getIdentificador() > 0 , "Error no se guardo el nuevo objeto");
         

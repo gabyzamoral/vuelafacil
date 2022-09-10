@@ -26,6 +26,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </header>
 
             <h3>Lista ciudades</h3>
+            <form action="/ciudad" method="get">
+                <label for="criterio">Buscar</label>
+                <input type="text" th:value="${criterio}" id="criterio" name="criterio">
+                <input type="submit" value="Buscar ciudad">
+            </form>
+            
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -37,12 +43,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="ciudad : ${ciudades}">
+                    <tr th:if="${not #lists.isEmpty(ciudades)}" th:each="ciudad : ${ciudades}">
                         <td scope="row" th:text="${ciudad.identificador}">...</td>
                         <td th:text="${ciudad.nombreCiudad}">...</td>
                         <td th:text="${ciudad.nombreAeropuerto}">...</td>
                         <td th:text="${ciudad.codigoAeropuerto}">...</td>
                         <td th:text="${ciudad.estadoAeropuerto}">...</td>
+                    </tr>
+                    <tr th:unless="${not #lists.isEmpty(ciudades)}">
+                        <td colspan="5">No se encontraron registros</td>
                     </tr>
                 </tbody>
             </table>

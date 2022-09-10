@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -25,8 +26,15 @@ public class ControladorPrincipal
     }
 
     @GetMapping("/ciudad")
-    public String cargarListaCiudaddes(Model model){
-        model.addAttribute("ciudades", servicio.consultarCiudad());
+    public String cargarListaCiudaddes(Model model, @RequestParam(value="criterio", required=false) String criterio){
+        if (criterio == null){
+                    model.addAttribute("ciudades", servicio.consultarCiudad());
+        }
+        else {
+            model.addAttribute("ciudades", servicio.consultarCiudad(criterio));
+            model.addAttribute("criterio", criterio);
+        }
+
         return "listaciudades";
     }
     

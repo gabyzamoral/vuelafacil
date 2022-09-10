@@ -29,9 +29,9 @@ public class VuelaFacilRutasTest {
     @Test
     @Disabled     
     void probarSiSeCreaUnaRuta(){
-        Rutas c = new Rutas("nameruta", "codruta", "Bucaramanga", " Bogota", LocalDateTime.of(2022,10,25,9,10,00), LocalDateTime.of(2020,10,31,9,10,00),true);
+       /* */ Rutas c = new Rutas("nameruta", "codruta", "Bucaramanga", " Bogota", LocalDateTime.of(2022,10,25,9,10,00), LocalDateTime.of(2020,10,31,9,10,00),true);
         Rutas guardado = servicio.crearNuevaRuta(c);
-        Assertions.assertTrue(guardado.getRutaId() > 0 , "Error no se guardo el nuevo objeto");
+        Assertions.assertTrue(guardado.getRutaId() > 0 , "Error no se guardo el nuevo objeto");*/
         
     }
 

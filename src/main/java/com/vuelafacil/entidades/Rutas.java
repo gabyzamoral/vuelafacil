@@ -31,16 +31,15 @@ public class Rutas {
     @Column(name = "rutacodigo", nullable = false, length = 100)
     private String codigoRuta;
     
-    @Column(name = "rutaciudadorigen", nullable = false, length = 100)
-    private String rutaciudadorigen;
+    @Column(name = "ciudidorigen", nullable = false, length = 100)
+    private int rutaciudadorigen;
     
     
-    @Column(name = "rutaciudaddestino", nullable = false, length = 100)
-    private String rutaciudaddestino;
+    @Column(name = "ciudiddestino", nullable = false, length = 100)
+    private int rutaciudaddestino;
 
     @Column(name = "rutahabilitado", columnDefinition = "TinyINT")
     private boolean rutahabilitado;
-
 
     @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP")
     private LocalDateTime horaSalida;
@@ -52,7 +51,7 @@ public class Rutas {
         
     }
             
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
+    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
         this.rutaid = rutaid;
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -63,7 +62,7 @@ public class Rutas {
 
     }
  
-    public Rutas ( String nombreRuta, String codigoRuta, String rutaciudadorigen, String rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
+    public Rutas ( String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
         
         this.nombreRuta = nombreRuta;
         this.codigoRuta = codigoRuta;
@@ -71,26 +70,23 @@ public class Rutas {
         this.rutaciudaddestino = rutaciudaddestino;
         this.horaSalida = horaSalida;
         this.horaLlegada = horaLlegada;
-
     }
 
     public void setRutaid(int rutaid){
        this.rutaid = rutaid;
     }
     
-
     public void setNombreRuta(String nombreRuta){
         this.nombreRuta = nombreRuta;
     }
 
-    public void setRutaCiudadOrigen(String rutaciudadorigen) {
+    public void setRutaCiudadOrigen(int rutaciudadorigen) {
         this.rutaciudadorigen = rutaciudadorigen;
     }
 
-    public void setRutaCiudadDestino(String rutaciudaddestino) {
+    public void setRutaCiudadDestino(int rutaciudaddestino) {
         this.rutaciudaddestino = rutaciudaddestino;
     }
-
     
     public void setCodigoRuta(String codigoRuta){
         this.codigoRuta = codigoRuta;
@@ -99,8 +95,6 @@ public class Rutas {
     public void setRutaHabilitado(boolean rutahabilitado) {
         this.rutahabilitado = rutahabilitado;
     }
-
-
 
     public void setHoraSalida(LocalDateTime horaSalida){
         this.horaSalida = horaSalida;
@@ -112,8 +106,7 @@ public class Rutas {
 
     public int getRutaId(){
         return this.rutaid;
-    }
-    
+    }    
 
     public String getNombreRuta(){
         return this.nombreRuta;
@@ -123,15 +116,13 @@ public class Rutas {
         return this.codigoRuta;
     }
 
-    public String getRutaCiudadOrigen() {
+    public int getRutaCiudadOrigen() {
         return rutaciudadorigen;
     }
 
-    public String getRutaCiudadDestino() {
+    public int getRutaCiudadDestino() {
         return rutaciudaddestino;
     }
-
-
 
     public LocalDateTime getHoraSalida(){
         return this.horaSalida;
@@ -144,8 +135,5 @@ public class Rutas {
     public boolean isRutahabilitado() {
         return rutahabilitado;
     }
-
     
 }
-
-

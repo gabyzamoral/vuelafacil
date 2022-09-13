@@ -5,7 +5,7 @@
   --primario: #0353cc;
   --primario2: #646566;
   --secundario: #3a3d3f;
-  --secundario2: #e4e6e7;
+  --secundario2: #f5f6f7;
   --blanco: #f8f8f8;
   --negro: #121212;
 }
@@ -97,8 +97,14 @@ header {
   grid-template-columns: 1fr 1fr;
   height: 100vh;
   align-items: center;
-  padding: 10rem;
-  /*justify-content: center;*/
+  padding: 7rem;
+}
+.info-banner {
+  margin-top: 1rem;
+}
+.info-banner img {
+  margin-top: 0rem;
+  padding-top: 1rem;
 }
 .logo-banner {
   width: 100%;
@@ -130,9 +136,10 @@ header {
   background-color: var(--primario);
   font-weight: bold;
 }
+
 /*---------------------- Opcion de vuelos ---------------*/
 .destinos {
-  background-color: #bdc9e2;
+  background-color: #dbe2f0;
 }
 .destinos form {
   display: flex;
@@ -140,13 +147,23 @@ header {
   padding: 1.5rem 5rem;
 }
 .botones button {
-  margin: 2rem 5rem;
+  margin: 4rem 5rem;
   width: 30rem;
   font-size: 2.5rem;
   border-radius: 1.5rem;
-  gap: 2rem;
 }
+
 .botones #ida-regreso {
+  background-color: var(--primario);
+  margin-right: 0;
+}
+.botones #ida {
+  margin-left: 0;
+}
+.botones button#ida-regreso:hover {
+  background-color: var(--blanco);
+}
+.botones button#ida:hover {
   background-color: var(--primario);
 }
 .detalles {
@@ -172,6 +189,31 @@ header {
   font-size: 2rem;
   font-weight: bold;
   line-height: 6rem;
+}
+.destinos button #buscar {
+  color: #121212;
+}
+
+.destinos button#buscar {
+  background-color: #0353cc;
+  border: none;
+  border-radius: 2.5rem;
+  padding: 0.3rem 6rem;
+  padding-left: 1.5rem;
+  margin-left: 5rem;
+  color: var(--blanco);
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.destinos button img {
+  align-content: flex-end;
+  justify-content: right;
+}
+
+.destinos button#buscar:hover {
+  background-color: var(--blanco);
+  color: var(--primario);
 }
 
 /*-------- seccion de seleccion de vuelvos---------*/

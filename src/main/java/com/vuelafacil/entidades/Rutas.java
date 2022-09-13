@@ -23,23 +23,22 @@ public class Rutas {
     @Id
     @Column(name = "rutaid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rutaid;
+    private int identificador;
     
-    @Column(name = "rutanombre", nullable = false, length = 100)    
+    @Column(name = "rutanombre", nullable = false, length = 80)    
     private String nombreRuta;
 
-    @Column(name = "rutacodigo", nullable = false, length = 100)
+    @Column(name = "rutacodigo", nullable = false, length = 10)
     private String codigoRuta;
     
-    @Column(name = "ciudidorigen", nullable = false, length = 100)
-    private int rutaciudadorigen;
+    @Column(name = "ciudidorigen", nullable = false, length = 6)
+    private int ciudadOrigen;    
     
-    
-    @Column(name = "ciudiddestino", nullable = false, length = 100)
-    private int rutaciudaddestino;
+    @Column(name = "ciudiddestino", nullable = false, length = 6)
+    private int ciudadDestino;
 
     @Column(name = "rutahabilitado", columnDefinition = "TinyINT")
-    private boolean rutahabilitado;
+    private boolean estado;
 
     @Column(name = "rutafechahorasalida", columnDefinition="TIMESTAMP")
     private LocalDateTime horaSalida;
@@ -51,49 +50,47 @@ public class Rutas {
         
     }
             
-    public Rutas (int rutaid, String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
-        this.rutaid = rutaid;
-        this.nombreRuta = nombreRuta;
-        this.codigoRuta = codigoRuta;
-        this.rutaciudadorigen = rutaciudadorigen;
-        this.rutaciudaddestino = rutaciudaddestino;
-        this.horaSalida = horaSalida;
-        this.horaLlegada = horaLlegada;
-
+    public Rutas (int identificador, String nombreRuta, String codigoRuta, int ciudadOrigen, int ciudadDestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean estado){
+        this.identificador = identificador;
+        this.nombreRuta    = nombreRuta;
+        this.codigoRuta    = codigoRuta;
+        this.ciudadOrigen  = ciudadOrigen;
+        this.ciudadDestino = ciudadDestino;
+        this.horaSalida    = horaSalida;
+        this.horaLlegada   = horaLlegada;
     }
  
-    public Rutas ( String nombreRuta, String codigoRuta, int rutaciudadorigen, int rutaciudaddestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean rutahabilitado){
-        
-        this.nombreRuta = nombreRuta;
-        this.codigoRuta = codigoRuta;
-        this.rutaciudadorigen = rutaciudadorigen;
-        this.rutaciudaddestino = rutaciudaddestino;
-        this.horaSalida = horaSalida;
-        this.horaLlegada = horaLlegada;
+    public Rutas ( String nombreRuta, String codigoRuta, int ciudadOrigen, int ciudadDestino, LocalDateTime horaSalida, LocalDateTime horaLlegada, boolean estado){
+        this.nombreRuta   = nombreRuta;
+        this.codigoRuta   = codigoRuta;
+        this.ciudadOrigen = ciudadOrigen;
+        this.ciudadDestino = ciudadDestino;
+        this.horaSalida   = horaSalida;
+        this.horaLlegada  = horaLlegada;
     }
 
-    public void setRutaid(int rutaid){
-       this.rutaid = rutaid;
+    public void setIdentificador(int identificador){
+       this.identificador = identificador;
     }
     
     public void setNombreRuta(String nombreRuta){
         this.nombreRuta = nombreRuta;
     }
 
-    public void setRutaCiudadOrigen(int rutaciudadorigen) {
-        this.rutaciudadorigen = rutaciudadorigen;
+    public void setCiudadOrigen(int ciudadOrigen) {
+        this.ciudadOrigen = ciudadOrigen;
     }
 
-    public void setRutaCiudadDestino(int rutaciudaddestino) {
-        this.rutaciudaddestino = rutaciudaddestino;
+    public void setCiudadDestino(int ciudadDestino) {
+        this.ciudadDestino = ciudadDestino;
     }
     
     public void setCodigoRuta(String codigoRuta){
         this.codigoRuta = codigoRuta;
     }
 
-    public void setRutaHabilitado(boolean rutahabilitado) {
-        this.rutahabilitado = rutahabilitado;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     public void setHoraSalida(LocalDateTime horaSalida){
@@ -104,8 +101,8 @@ public class Rutas {
         this.horaLlegada = horaLlegada;
     }
 
-    public int getRutaId(){
-        return this.rutaid;
+    public int getIdentificador(){
+        return this.identificador;
     }    
 
     public String getNombreRuta(){
@@ -116,12 +113,12 @@ public class Rutas {
         return this.codigoRuta;
     }
 
-    public int getRutaCiudadOrigen() {
-        return rutaciudadorigen;
+    public int getCiudadOrigen() {
+        return ciudadOrigen;
     }
 
-    public int getRutaCiudadDestino() {
-        return rutaciudaddestino;
+    public int getCiudadDestino() {
+        return ciudadDestino;
     }
 
     public LocalDateTime getHoraSalida(){
@@ -132,8 +129,8 @@ public class Rutas {
         return this.horaLlegada;
     }
 
-    public boolean isRutahabilitado() {
-        return rutahabilitado;
+    public boolean isEstado() {
+        return estado;
     }
     
 }

@@ -19,51 +19,45 @@ public class Pasajeros {
     @Id
     @Column(name = "pasaid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int pasaid;
+    private int identificador;    
     
-    
-    @Column(name = "pasanombre", nullable = false, length = 100)    
+    @Column(name = "pasanombre", nullable = false, length = 50)    
     private String nombres;
     
-    @Column(name = "pasaapellido", nullable = false, length = 100)    
+    @Column(name = "pasaapellido", nullable = false, length = 50)    
     private String apellidos;
     
-    @Column(name = "pasacorreoelectronico", nullable = false, length = 100)    
+    @Column(name = "pasacorreoelectronico", nullable = false, length = 80)    
     private String correoElectronico;
     
-    @Column(name = "pasacelular", nullable = false, length = 100)    
+    @Column(name = "pasacelular", nullable = false, length = 20)    
     private String numCelular;
 
     public Pasajeros(){
         
     }
     
-    public Pasajeros (int pasaid, String nombres, String apellidos, String correoElectronico, String numCelular){
-
-        this.pasaid = pasaid;
+    public Pasajeros (int identificador, String nombres, String apellidos, String correoElectronico, String numCelular){
+        this.identificador = identificador;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;
         this.numCelular = numCelular;
-
     }
 
-    public Pasajeros ( String nombres, String apellidos, String correoElectronico, String numCelular){
-
-        
+    public Pasajeros ( String nombres, String apellidos, String correoElectronico, String numCelular){       
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;
         this.numCelular = numCelular;
-
     }
 
-    public void setPasaid(int pasaid){
-        this.pasaid = pasaid;
+    public void setIdentificador(int identificador){
+        this.identificador = identificador;
     }
     
     public void setNombres(String nombres){
-         this.nombres = nombres;
+        this.nombres = nombres;
     }
 
     public void setApellidos(String apellidos){
@@ -74,14 +68,13 @@ public class Pasajeros {
         this.correoElectronico = correoElectronico;
     }
     
-    public void setNumeroCelular(String numCelular){
+    public void setNumCelular(String numCelular){
         this.numCelular = numCelular;
     }
 
-    public int getPasaid(){
-        return this.pasaid;
-    }
-    
+    public int getIdentificador(){
+        return this.identificador;
+    }    
 
     public String getNombres(){
         return this.nombres;
@@ -99,13 +92,12 @@ public class Pasajeros {
         return this.numCelular;
     }
 
-public String toString() 
+    public String toString() 
     {
     	return  "Nombres: " + this.nombres + "\n" +
-    		"Apellidos: " + this.apellidos + "\n" +
+    		    "Apellidos: " + this.apellidos + "\n" +
                 "Correo Electronico: " + this.correoElectronico + "\n" +
                 "Numero de celular: " + this.numCelular;
     	
-    }    
-
+    } 
 }

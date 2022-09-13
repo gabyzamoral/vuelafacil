@@ -18,7 +18,7 @@ public class PasajerosServicio {
     @Autowired
     private IPasajerosrepository repo;
     
-    public Pasajeros crearNuevoPasajero(Pasajeros c){
+    public Pasajeros crearPasajero(Pasajeros c){
         Pasajeros pas = repo.save(c);
         return pas;
     }
@@ -38,9 +38,12 @@ public class PasajerosServicio {
         return c;
     }    
     
-     public Pasajeros actualizarPasajeros(Pasajeros c){
+    public Pasajeros actualizarPasajeros(Pasajeros c){
         Pasajeros pas = repo.save(c);
         return pas;
+    }    
+
+    public Object consultarPasajeros() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

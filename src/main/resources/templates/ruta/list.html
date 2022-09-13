@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración de vuela facil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" >   
+    <link href="/css/admin.css" rel="stylesheet" >
+    <link rel="shortcut icon" href="/imagenes/logo.png" type="image/png"/>
+</head>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <a href="/dashboard">
+                    <img src="/imagenes/logo.png" alt="logo" class="img-fluid" style="max-height: 50%;">
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-9">
+                <h1>Administración del sistema vuela facil</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body >
+    <div class="container" >
+
+        <ul class="nav mb-3">
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">Inicio</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/usuario">Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ciudad">Ciudad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ruta">Rutas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/vuelo">Vuelos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pasajero">Pasajeros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/tikete">Tikete</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/salir">Salir</a>
+            </li>          
+        </ul>      
+ 
+        <h3>Gestión de pasajeros</h3>
+
+        <div class="row mt-3">
+            <div class="col-12 col-md-10"> 
+                <form action="/ruta" method="get">
+                    <label for="criterio">Buscar</label>
+                    <input type="text" th:value="${criterio}" id="criterio" name="criterio">
+                    <input type="submit" value="Buscar rutas">
+                </form>
+            </div>
+
+            <div class="col-12 col-md-2"> 
+                <div class="d-grid gap-2 col-12 mx-auto mt-2">
+                    <a href="/ruta/form" class="btn btn-primary" style="font-size: 1m;">Nueva ruta</a> 
+                </div>
+            </div>
+        </div> 
+
+        <div class="row mt-2">
+            <div class="col-12">
+                          
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Códgio</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Ciudad origen</th>
+                            <th scope="col">Ciudad destino</th>
+                            <th scope="col">Fecha hora de salida</th>
+                            <th scope="col">Fecha hora de llegada</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:if="${not #lists.isEmpty(rutas)}" th:each="ruta : ${rutas}">
+                            <td th:text="${ruta.codigoRuta}">...</td>
+                            <td th:text="${ruta.nombreRuta}">...</td>
+                            <td th:text="${ruta.ciudadOrigen}">...</td>
+                            <td th:text="${ruta.ciudadDestino}">...</td>
+                            <td th:text="${ruta.horaSalida}">...</td>
+                            <td th:text="${ruta.horaLlegada}">...</td>
+                            <td th:if="${ruta.estado == 1}" th:text="Activa">...</td>
+                            <td th:if="${ruta.estado == 0}" th:text="'Desactivada'">...</td>  
+                            <td>
+                                <a th:href ="${'/ruta/form/' + ruta.identificador}" title="Editar">
+                                    <ion-icon name="create-outline" size="large"></ion-icon>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr th:unless="${not #lists.isEmpty(rutas)}">
+                            <td colspan="8">No se encontraron registros</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>    
+</body>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3>Grupo 1</h3>
+                </div>
+    
+                <div class="col-12 col-sm-6">
+                    <span> Integrantes</span>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>

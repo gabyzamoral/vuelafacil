@@ -23,7 +23,7 @@ public class VuelaFacilPasajerosTests {
     @Autowired
     private PasajerosServicio servicio;
     
-    @Test    
+    /*@Test    
     @Disabled
     void probarSiSeCreaUnPasajero(){
         Pasajeros c = new Pasajeros("Mario Andres", "Jurado Herrera", "armitxe71@hotmail.com", "3212011452");
@@ -100,5 +100,5 @@ public class VuelaFacilPasajerosTests {
             servicio.actualizarPasajeros(encontrado);
         }, "Se esperaba error de violación de integridad");
     }    
-    
+    */
 }

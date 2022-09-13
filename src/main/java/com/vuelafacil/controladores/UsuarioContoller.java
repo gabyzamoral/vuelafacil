@@ -1,6 +1,7 @@
 
 package com.vuelafacil.controladores;
 import com.vuelafacil.entidades.Usuarios;
+import com.vuelafacil.entidades.TipoDocumento;
 import com.vuelafacil.servicios.UsuarioServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,9 @@ public class UsuarioContoller {
     @GetMapping("/usuario/form")
     public String cargarFormNuevoUsuario(Model modelo){
         Usuarios c = new Usuarios();
+       //TipoDocumento td = new TipoDocumento();
         modelo.addAttribute("usuario", c);
+        //modelo.addAttribute("tipoDocumento", td);
         return "usuario/frm";
     }
     

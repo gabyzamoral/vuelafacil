@@ -22,7 +22,7 @@ public class UsuarioServicios {
         return usu;
     }
     
-     public List<Usuarios> consultarUsuarios(){
+    public List<Usuarios> consultarUsuarios(){
         List<Usuarios> lista = repo.findAll();
         return lista;
     }     

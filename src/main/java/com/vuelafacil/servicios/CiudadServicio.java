@@ -34,12 +34,11 @@ public class CiudadServicio {
         List<Ciudad> lista = repo.findByNombreCiudadContaining(criterio);
         return lista;
     }
+    
     public Ciudad consultarCiudad(int Identificador){
         Ciudad c = repo.findById(Identificador).orElse(null);
         return c;
     }
-    
-
     
     public Ciudad actualizarCiudad(Ciudad c){
         Ciudad ciu = repo.save(c);
@@ -52,6 +51,5 @@ public class CiudadServicio {
         c.setEstadoAeropuerto(EstadoAeropuerto);
         Ciudad result = repo.save(c);
         return result;
-    }     
-    
+    }   
 }

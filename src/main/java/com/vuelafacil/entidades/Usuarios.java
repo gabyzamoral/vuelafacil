@@ -17,6 +17,9 @@ public class Usuarios {
     @Column(name = "usuaid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int identificador;
+
+    @Column(name = "tipdocid", nullable = false, length = 2)   
+    private int tipoDocumento;
     
     @Column(name = "usuanombre", nullable = false, length = 50)
     private String nombre;
@@ -42,11 +45,14 @@ public class Usuarios {
     @Column(name = "usuatipousuario", nullable = false, length = 2)   
     private int tipoUsuario;
 
+    //@ManyToOne(fetch = FetchType.LAZY)
+
     public Usuarios() {
     }
 
-    public Usuarios(int identificador, String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
+    public Usuarios(int identificador, int tipoDocumento, String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
         this.identificador = identificador;
+        this.tipoDocumento = tipoDocumento;
         this.nombre      = nombre;
         this.apellido    = apellido;
         this.documento   = documento;
@@ -57,7 +63,8 @@ public class Usuarios {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public Usuarios(String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
+    public Usuarios(int tipoDocumento, String nombre, String apellido, String documento, String direccion, String telefono, String nickUsuario, String password, int tipoUsuario) {
+        this.tipoDocumento = tipoDocumento;
         this.nombre      = nombre;
         this.apellido    = apellido;
         this.documento   = documento;
@@ -70,6 +77,10 @@ public class Usuarios {
 
     public void setIdentificador(int identificador) {
         this.identificador = identificador;
+    }
+
+    public void setTipoDocumento(int tipoDocumento) {
+        this.tipoDocumento = tipoDocumento;
     }
 
     public void setNombre(String nombre) {
@@ -106,6 +117,10 @@ public class Usuarios {
     
     public int getIdentificador() {
         return identificador;
+    }
+
+    public int getTipoDocumento() {
+        return tipoDocumento;
     }
 
     public String getNombre() {

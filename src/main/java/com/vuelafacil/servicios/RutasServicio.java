@@ -17,7 +17,7 @@ public class RutasServicio{
     @Autowired
     private IRutasrepository repo;
     
-    public Rutas crearNuevaRuta(Rutas c){
+    public Rutas crearRuta(Rutas c){
         Rutas  rut =repo.save(c);
         return rut;
     }
@@ -32,27 +32,25 @@ public class RutasServicio{
         return lista; 
     }
     
-    public Rutas consularltarRutas(int Rutaid){
+    public Rutas consultarRuta(int Rutaid){
         Rutas c = repo.findById(Rutaid).orElse(null);
         return c;
     }
  
-    public Rutas actualizarRutas(Rutas c){
+    public Rutas actualizarRuta(Rutas c){
         Rutas rut = repo.save(c);
         return rut;
     }
     
-    public Rutas inhabilitarRutas(int RutaId,boolean RutaHabilitado){
-
+    public Rutas inhabilitarRutas(int RutaId,boolean estado){
         Rutas c = repo.findById(RutaId).get();
-        c.setRutaHabilitado(RutaHabilitado);
+        c.setEstado(estado);
         Rutas result = repo.save(c);
         return result;
     }
 
-    public List<Rutas> consultarRuta(){
-        List<Rutas> lista = repo.findAll();
-        return lista;
-    }     
+    /*public Object consultarRutas() {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }*/
     
 }

@@ -58,74 +58,64 @@
         <div class="row mt-2">
             <div class="col-12">
                 
-                <form action="/usuario"  th:object="${usuario}" method="post">
+                <form action="/ruta"  th:object="${ruta}" method="post">
                     <input type="hidden" th:field="*{identificador}" id="identificador" name="identificador" readonly >
-                    <h2> Regristra o actualizar usuario</h2>
+                    <h2> Regristra o actualizar rutas</h2>
                     <div class="row mt-5">
-                        
-                        <div class="col-12 col-sm-4 col-md-4">
+                    
+                        <div class="col-12 col-sm-3 col-md-3">
+                            <label for="codigoRuta" class="form-label">Código</label>
+                            <input type="text" class="form-control" id="codigoRuta"  name="codigoRuta" th:field="*{codigoRuta}" maxlength ="10" required>
+                        </div>
+    
+                        <div class="col-12 col-sm-3 col-md-3">
+                            <label for="nombreRuta" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombreRuta" name="nombreRuta" th:field="*{nombreRuta}" maxlength ="80" required>
+                        </div>
+    
+                        <div class="col-12 col-sm-3 col-md-3">
                             <div class="form-group">
-                                <label for="tipoDocumento">Tipo de documento</label>
-                                <select class="form-control form-select" id="tipoDocumento"  name="tipoDocumento" required>
+                                <label for="ciudadOrigen">Ciudad origen</label>
+                                <select class="form-control form-select" id="ciudadOrigen" name="ciudadOrigen" required>
                                   <option value="1" selected>1</option>
                                   <option value="2">2</option>
                                 </select>
                             </div>
                         </div>
     
-                        <div class="col-12 col-sm-4 col-md-4">
-                            <label for="documento" class="form-label">Documento</label>
-                            <input type="text" class="form-control" id="documento" name="documento" th:field="*{documento}" maxlength ="15" required>
-                        </div>
-    
-                        <div class="col-12 col-sm-4 col-md-4">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre"  name="nombre" th:field="*{nombre}" maxlength ="50" required>
-                        </div>
-    
-                        <div class="col-12 col-sm-4 col-md-4">
-                            <label for="apellido" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" th:field="*{apellido}" maxlength ="50" required>
-                        </div>              
-    
-                        <div class="col-12 col-sm-4 col-md-4">
-                            <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion"  th:field="*{direccion}" maxlength ="60" required>
-                        </div>
-    
-                        <div class="col-12 col-sm-4 col-md-4">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono"  th:field="*{telefono}" maxlength ="60" required>
-                        </div>
-    
-                        <div class="col-12 col-sm-4 col-md-4">
-
+                        <div class="col-12 col-sm-3 col-md-3">
                             <div class="form-group">
-                                <label for="tipoUsuario">Tipo de usuario </label>
-                                <select class="form-control form-select"  id="tipoUsuario" name="tipoUsuario" required>
-                                    <option th:value=null>Seleccione...</option>
-                                    <option th:value="1" th:text="'Administrador'"></option>
-                                    <option th:value="2" th:text="'Cajero'"></option>
+                                <label for="ciudadDestino">Ciudad destino</label>
+                                <select class="form-control form-select" id="ciudadDestino" name="ciudadDestino" required>
+                                  <option value="1" selected>1</option>
+                                  <option value="2">2</option>
                                 </select>
-                              </div>                           
+                            </div>
                         </div>
-    
+                    </div>
+
+                    <div class="row mt-2">                    
+
                         <div class="col-12 col-sm-4 col-md-4">
-                            <label for="nickUsuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="nickUsuario" name="nickUsuario"  th:field="*{nickUsuario}" maxlength ="20" required>
+                            <label for="horaSalida" class="form-label">Fecha hora salida</label>
+                            <input type="datetime-local" class="form-control" id="horaSalida" name="horaSalida" th:field="*{horaSalida}" maxlength ="80" required>
                         </div>
-    
+
                         <div class="col-12 col-sm-4 col-md-4">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password"  maxlength ="200" required>
+                            <label for="horaLlegada" class="form-label">Fecha hora llegada</label>
+                            <input type="datetime-local" class="form-control" id="horaLlegada" name="horaLlegada" th:field="*{horaLlegada}" maxlength ="80" required>
                         </div>
-    
+
+                        <div class="col-12 col-sm-4 col-md-4 mt-3">
+                            <label for="direccion" class="form-label">Estado</label>
+                            <input type="checkbox" th:field="*{estado}"  id="estado" name="estado">
+                        </div> 
                     </div>
     
                     <div class="row mt-5">
 
                         <div class="col-2 ">
-                            <a href="/usuario" class="btn btn-danger" style="font-size: 1m;">Gestionar usuario</a> 
+                            <a href="/ruta" class="btn btn-danger" style="font-size: 1m;">Gestionar rutas</a> 
                         </div>
 
                         <div class="col-10 text-end">

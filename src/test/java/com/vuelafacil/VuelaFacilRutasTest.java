@@ -35,7 +35,7 @@ public class VuelaFacilRutasTest {
         
     }
 
-    @Test
+   /* @Test
     @Disabled 
     
     void probrarSiNoEncuentroCiudadConId(){
@@ -83,5 +83,5 @@ public class VuelaFacilRutasTest {
         Rutas actualizado = servicio.consularltarRutas(1);
         Assertions.assertEquals(actualizado.isRutahabilitado(), !valorInicial, "No se actualizó la ruta 1" );
     }
-    
+    */
 }

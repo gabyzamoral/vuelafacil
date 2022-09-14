@@ -29,8 +29,12 @@ public class ControladorPrincipal
         return "login";
     } 
 
+
     @GetMapping("/dashboard")//Ramon aqui le cambie la ruta para que me llegue al Index y no 
                          //   a la dashboard
+
+                    
+
     public  String dashboard()
     {
         return "dashboard";
